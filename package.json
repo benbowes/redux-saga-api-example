@@ -1,0 +1,63 @@
+{
+  "name": "test-search",
+  "version": "0.0.3",
+  "description": "Test Search",
+  "main": "app/index.js",
+  "scripts": {
+    "start": "webpack-dev-server --progress --host 0.0.0.0 --port 3005",
+    "lint": "eslint ./app",
+    "test": "mocha --compilers js:babel-core/register 'app/**/*__test__.js'",
+    "dist": "webpack -p"
+  },
+
+  "engines": { "node": ">=4.2.0" },
+  "pre-commit": [ "lint", "test" ],
+  "author": "Ben Bowes <benbowes@gmail.com>",
+  "repository" : { "type": "git", "url": "https://bitbucket.org/benbowes/benbowes-ui-test" },
+  "license": "UNLICENSED",
+  "private": true,
+
+  "devDependencies": {
+
+    "babel-core": "6.9.x",
+    "babel-loader": "6.2.x",
+    "babel-preset-es2015": "6.9.x",
+    "babel-preset-react": "6.5.x",
+    "babel-preset-stage-1": "6.5.x",
+
+    "babel-polyfill": "6.7.x",
+    "isomorphic-fetch": "2.2.x",
+
+    "eslint": "2.11.x",
+    "eslint-plugin-babel": "3.2.x",
+    "eslint-plugin-react": "5.0.x",
+    "eslint-plugin-import": "1.0.x",
+    "babel-eslint": "4.1.x",
+    "estraverse-fb": "1.3.x",
+
+    "pre-commit": "1.1.x",
+
+    "react": "0.14.x",
+    "react-dom": "0.14.x",
+
+    "react-redux": "4.4.x",
+    "redux": "3.5.x",
+
+    "redux-saga": "0.10.x",
+
+    "node-sass": "3.7.x",
+    "css-loader": "0.23.x",
+    "sass-loader": "3.1.x",
+    "style-loader": "0.13.x",
+
+    "expect": "1.20.x",
+    "mocha": "2.5.x",
+    "react-addons-test-utils": "0.14.x",
+    "ignore-styles": "2.0.x",
+    "mocha-jsdom": "1.1.x",
+
+    "webpack": "1.12.x",
+    "webpack-dev-server": "1.14.x"
+
+  }
+}

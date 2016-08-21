@@ -1,0 +1,36 @@
+html {
+  font: normal 14px/1.4 'Helvetica Neue', Helvetica, sans-serif;
+  box-sizing: border-box;
+  background: #f1f1f1;
+  -webkit-font-smoothing: antialiased;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+ol {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+figure {
+  padding: 0;
+  margin: 0;
+}
+img{
+  max-width: 100%;
+}
+p{
+  margin: 0;
+}
+h3{
+  margin: 1rem 0 0.5rem;
+  font-weight: 500;
+}
+.screenReaderOnly {
+  position: absolute !important;
+  top: -9999px !important;
+  left: -9999px !important;
+}

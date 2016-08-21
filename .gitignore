@@ -1,0 +1,10 @@
+.git
+.cache
+.css
+.DS_Store
+npm-debug.log
+Thumbs.db
+
+dist
+bower_components
+node_modules
