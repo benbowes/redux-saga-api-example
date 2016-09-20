@@ -7,14 +7,8 @@
   justify-content: center;
 }
 
-.imageListing{
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  flex-direction: column;
-}
-
 .imageListingItem{
+  border-radius: 3px;
   display: flex;
   align-items: center;
   padding: 6px;
@@ -23,6 +17,13 @@
   width: 200px;
   overflow: hidden;
   background: #fff;
+}
+
+.imageListing{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  flex-direction: column;
 }
 
 .heading{

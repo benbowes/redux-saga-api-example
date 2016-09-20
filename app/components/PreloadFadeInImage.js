@@ -17,7 +17,7 @@ export class PreloadFadeInImage extends Component {
         isLoading: false
       });
       this.preloadImg.src = imgSauce;
-    }, 100);
+    }, 10);
   }
 
   componentWillUnmount() {
@@ -28,11 +28,12 @@ export class PreloadFadeInImage extends Component {
   }
 
   render() {
-    const { imgSauce } = this.props;
+    const { imgSauce, className } = this.props;
     const isLoadingStyle = {transition: 'opacity 0.3s ease-out', opacity: '0'};
     const isLoadedStyle = {transition: 'opacity 0.3s ease-out'};
     return (
       <img src={imgSauce}
+        className={className || ''}
         style={this.state.isLoading ? isLoadingStyle: isLoadedStyle}
       />
     );
@@ -41,5 +42,6 @@ export class PreloadFadeInImage extends Component {
 }
 
 PreloadFadeInImage.propTypes = {
+  className: PropTypes.string,
   imgSauce: PropTypes.string.isRequired
 };

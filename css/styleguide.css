@@ -7,23 +7,7 @@ html {
 *, *:before, *:after {
   box-sizing: inherit;
 }
-figure {
-  padding: 0;
-  margin: 0;
-}
-img{
-  max-width: 100%;
-  display: flex;
-}
-p{
-  margin: 0;
-}
-h3{
-  margin: 1rem 0 0.5rem;
-  font-weight: 500;
-}
-.screenReaderOnly {
-  position: absolute !important;
-  top: -9999px !important;
-  left: -9999px !important;
+
+:focus {
+  outline: 0;
 }

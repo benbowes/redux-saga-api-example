@@ -9,7 +9,10 @@ import styles from './Image.css';
 export const Image = ( props ) => {
   return (
     <a href={props.image.url} className={styles.image}>
-      <PreloadFadeInImage imgSauce={props.image.images.fixed_width.url} />
+      <PreloadFadeInImage
+        className={styles.img}
+        imgSauce={props.image.images.fixed_width.url}
+      />
     </a>
   );
 };
