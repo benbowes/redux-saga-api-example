@@ -1,9 +1,10 @@
 import React, { PropTypes, Component } from 'react';
 import { connect } from 'react-redux';
-import { REQUEST_SEARCH_DATA, REQUEST_SHOW_MORE } from 'constants/actionTypes';
+import { REQUEST_SEARCH_DATA } from 'constants/actionTypes';
 import { Image } from 'components/Image';
+import { LoadMoreButton } from 'components/LoadMoreButton';
 import SearchInput from 'components/SearchInput';
-import * as styles from './BaseComponent.scss';
+import * as styles from './BaseComponent.css';
 
 /**
 * @description ES6 class component. The root component...
@@ -32,15 +33,15 @@ export class BaseComponent extends Component {
     } = this.props;
 
     return (
-      <div className={styles['image-listing']}>
-      <h1>Results {searchTerm && <span>for &quot;{searchTerm}&quot;</span>}</h1>
+      <div className={styles.imageListing}>
+      <h1 className={styles.heading}>You searched {searchTerm && <span>for &lsquo;{searchTerm}&rsquo;</span>}</h1>
 
       <SearchInput dispatch={dispatch} />
 
       {imageSearchResults && imageSearchResults.length > 0 &&
-        <ol>
+        <ol className={styles.imageListingItems}>
           {imageSearchResults.map((imageData, index) =>
-            <li key={`${imageData.id}-${index}`} className={styles['image-listing__item']}>
+            <li key={`${imageData.id}-${index}`} className={styles.imageListingItem}>
               <Image image={imageData} />
             </li>
           )
@@ -49,17 +50,12 @@ export class BaseComponent extends Component {
       }
 
       {!loading &&
-        <button style={{width:'200px', alignSelf: 'center', padding: '8px'}} onClick={() => {
-          dispatch({
-            type: REQUEST_SHOW_MORE,
-            payload: {
-              url: `http://api.giphy.com/v1/gifs/search?q=funny+dog&api_key=dc6zaTOxFJmzC&offset=${searchOffset}`,
-              searchTerm: 'funny dog'
-            }
-          });
-        }}>
-          SHOW MORE
-        </button>
+        <LoadMoreButton
+          dispatch={dispatch}
+          searchOffset={searchOffset}
+          searchTerm={searchTerm}
+          loading={loading}
+        />
       }
       </div>
     );

@@ -5,7 +5,15 @@ import {
   REQUEST_SHOW_MORE
 } from 'constants/actionTypes';
 
-export const imageSearch = ( state = { searchOffset: 0 }, action = {} ) => {
+const initialState = {
+  images: [],
+  loading: false,
+  messages: undefined,
+  searchTerm: undefined,
+  searchOffset: 0
+};
+
+export const imageSearch = ( state = initialState, action = {} ) => {
 
   switch(action.type) {
 

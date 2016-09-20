@@ -1,0 +1,10 @@
+.image {
+  border-radius: 2px;
+  overflow: hidden;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.image:HOVER{
+  transition: opacity 0s ease-in-out;
+  opacity: 0.5;
+}

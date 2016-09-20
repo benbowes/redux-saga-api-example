@@ -1,0 +1,20 @@
+.button{
+  cursor: pointer;
+  font-size: 14px;
+  border-radius: 3px;
+  border: 0;
+  color: white;
+  padding: 10px 20px;
+  margin: 0 0 0 10px;
+  line-height: 1;
+  background: #32a4b3;
+  font-weight: bold;
+}
+
+.button:HOVER{
+  opacity: 0.8;
+}
+
+.button:ACTIVE{
+  opacity: 0.9;
+}

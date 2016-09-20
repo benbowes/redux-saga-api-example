@@ -7,20 +7,13 @@ html {
 *, *:before, *:after {
   box-sizing: inherit;
 }
-ol {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-}
 figure {
   padding: 0;
   margin: 0;
 }
 img{
   max-width: 100%;
+  display: flex;
 }
 p{
   margin: 0;

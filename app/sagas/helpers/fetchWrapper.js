@@ -33,4 +33,4 @@ export const fetchWrapper = ( url, method = 'GET' ) => {
         ...{ ok: false }
       };
     });
-}
+};

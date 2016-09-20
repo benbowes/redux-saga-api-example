@@ -1,6 +1,6 @@
 import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
-import * as styles from './SearchInput.scss';
+import * as styles from './SearchInput.css';
 
 /**
 * @description Class component. Styles prefixed with `sg-` are coming in from a global stylesheet
@@ -31,13 +31,14 @@ class SearchInput extends Component {
     const { isLoading } = this.props;
     return (
       <div>
-        <form onSubmit={(event) => this.addItemHandler( event )} className="sg-row">
+        <form onSubmit={(event) => this.addItemHandler( event )} className={`sg-row ${styles.form}`}>
 
           <input
             className={styles.input}
             type="text"
             ref="searchGiphyInput"
-            placeholder="Search Giphy..."
+            placeholder="Enter search term..."
+            autoFocus
           />
 
           <button className={styles.button} title={'Search Giphy'} type={'submit'} label={'Search'}>

@@ -1,5 +1,6 @@
 import React, { PropTypes } from 'react';
-import styles from './Image.scss';
+import { PreloadFadeInImage } from './PreloadFadeInImage';
+import styles from './Image.css';
 
 /**
 * @description Stateless function component.
@@ -7,8 +8,8 @@ import styles from './Image.scss';
 
 export const Image = ( props ) => {
   return (
-    <a href={props.image.url} className={styles['image']}>
-      <img src={props.image.images.fixed_width.url} />
+    <a href={props.image.url} className={styles.image}>
+      <PreloadFadeInImage imgSauce={props.image.images.fixed_width.url} />
     </a>
   );
 };

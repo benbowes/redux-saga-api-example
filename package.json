@@ -45,7 +45,8 @@
 
     "redux-saga": "0.10.x",
 
-    "node-sass": "3.7.x",
+    "postcss-loader": "0.13.x",
+    "autoprefixer": "6.4.x",
     "css-loader": "0.23.x",
     "sass-loader": "3.1.x",
     "style-loader": "0.13.x",

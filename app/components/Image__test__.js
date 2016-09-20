@@ -14,7 +14,6 @@ const image = {
 };
 
 describe('<Image />', () => {
-
   it('Should render as expected', () => {
     const renderer = ReactTestUtils.createRenderer();
     renderer.render( <Image image={image} /> );
