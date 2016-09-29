@@ -10,7 +10,15 @@ const initialState = {
   loading: false,
   messages: undefined,
   searchTerm: undefined,
-  searchOffset: 0
+  searchOffset: 1
+};
+
+const getSearchOffset = (searchOffset, data) => {
+  if( !data.pagination ) return searchOffset + 25;
+
+  return ((searchOffset + 25) < data.pagination.total_count)
+    ? searchOffset + 25
+    : data.pagination.total_count;
 };
 
 export const imageSearch = ( state = initialState, action = {} ) => {
@@ -23,7 +31,7 @@ export const imageSearch = ( state = initialState, action = {} ) => {
       loading: true,
       messages: undefined,
       searchTerm: undefined,
-      searchOffset: state.searchOffset,
+      searchOffset: 1,
       images: []
     };
 
@@ -40,7 +48,7 @@ export const imageSearch = ( state = initialState, action = {} ) => {
       messages: undefined,
       searchTerm: action.payload.searchTerm,
       images: [...state.images, ...action.payload.receivedData.data],
-      searchOffset: state.searchOffset + 25
+      searchOffset: getSearchOffset( state.searchOffset, action.payload.receivedData )
     };
 
   case RECEIVE_SEARCH_DATA_FAILED:
