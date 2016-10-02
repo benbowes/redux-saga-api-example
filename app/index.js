@@ -1,5 +1,4 @@
 import 'babel-polyfill'; // required by redux-saga for generator func's
-
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';

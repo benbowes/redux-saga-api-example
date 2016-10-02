@@ -3,22 +3,27 @@ import {
   RECEIVE_SEARCH_DATA,
   RECEIVE_SEARCH_DATA_FAILED,
   REQUEST_SHOW_MORE
-} from 'constants/actionTypes';
+} from '../constants/actionTypes';
 
-const initialState = {
+export const initialState = {
   images: [],
   loading: false,
+  showMorePossible: true,
   messages: undefined,
   searchTerm: undefined,
-  searchOffset: 1
+  searchOffset: 0
 };
 
-const getSearchOffset = (searchOffset, data) => {
-  if( !data.pagination ) return searchOffset + 25;
-
+export const getSearchOffset = (searchOffset, data) => {
   return ((searchOffset + 25) < data.pagination.total_count)
     ? searchOffset + 25
     : data.pagination.total_count;
+};
+
+export const getShowMorePossible = (searchOffset, data) => {
+  return ((searchOffset + 25) < data.pagination.total_count)
+    ? true
+    : false;
 };
 
 export const imageSearch = ( state = initialState, action = {} ) => {
@@ -27,12 +32,8 @@ export const imageSearch = ( state = initialState, action = {} ) => {
 
   case REQUEST_SEARCH_DATA:
     return {
-      ...state,
-      loading: true,
-      messages: undefined,
-      searchTerm: undefined,
-      searchOffset: 1,
-      images: []
+      ...initialState,
+      loading: true
     };
 
   case REQUEST_SHOW_MORE:
@@ -46,6 +47,7 @@ export const imageSearch = ( state = initialState, action = {} ) => {
       ...state,
       loading: false,
       messages: undefined,
+      showMorePossible: getShowMorePossible( state.searchOffset, action.payload.receivedData ),
       searchTerm: action.payload.searchTerm,
       images: [...state.images, ...action.payload.receivedData.data],
       searchOffset: getSearchOffset( state.searchOffset, action.payload.receivedData )

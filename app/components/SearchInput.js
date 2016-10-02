@@ -46,20 +46,20 @@ class SearchInput extends Component {
           </button>
 
         </form>
-        <p>&nbsp;</p>
+
       </div>
     );
   }
 }
 
 SearchInput.propTypes = {
-  dispatch: PropTypes.func,
-  isLoading: PropTypes.bool
+  dispatch: PropTypes.func.isRequired,
+  isLoading: PropTypes.bool.isRequired
 };
 
 export default connect((state) => {
   return {
-    isLoading: state.imageSearch.loading,
-    dispatch: state.dispatch
+    dispatch: state.dispatch,
+    isLoading: state.imageSearch.loading
   };
 })(SearchInput);

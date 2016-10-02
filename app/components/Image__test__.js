@@ -3,6 +3,7 @@ import expect from 'expect';
 import React from 'react';
 import ReactTestUtils from 'react-addons-test-utils';
 import { Image } from './Image';
+import { PreloadFadeInImage } from './PreloadFadeInImage';
 
 const image = {
   url: 'http://some-giphy-permalink.url',
@@ -21,7 +22,7 @@ describe('<Image />', () => {
 
     expect( ReactComponent.type ).toEqual('a');
     expect( ReactComponent.props.href ).toEqual('http://some-giphy-permalink.url');
-    expect(ReactComponent.props.children.type).toEqual('img');
-    expect(ReactComponent.props.children.props.src).toEqual('http://some-image.url');
+    expect(ReactComponent.props.children.type).toEqual(PreloadFadeInImage);
+    expect(ReactComponent.props.children.props.imgSauce).toEqual('http://some-image.url');
   });
 });

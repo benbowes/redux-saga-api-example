@@ -25,11 +25,12 @@ export class BaseComponent extends Component {
 
   render() {
     const {
-      imageSearchResults,
-      searchTerm,
       dispatch,
-      searchOffset,
-      loading
+      imageSearchResults,
+      loading,
+      searchTerm,
+      showMorePossible,
+      searchOffset
     } = this.props;
 
     return (
@@ -49,7 +50,7 @@ export class BaseComponent extends Component {
         </ol>
       }
 
-      {!loading &&
+      {showMorePossible &&
         <LoadMoreButton
           dispatch={dispatch}
           searchOffset={searchOffset}
@@ -63,19 +64,21 @@ export class BaseComponent extends Component {
 }
 
 BaseComponent.propTypes = {
-  imageSearchResults: PropTypes.array,
-  searchTerm: PropTypes.string,
-  dispatch: PropTypes.func,
+  dispatch: PropTypes.func.isRequired,
+  imageSearchResults: PropTypes.array.isRequired,
+  loading: PropTypes.bool.isRequired,
+  showMorePossible: PropTypes.bool.isRequired,
   searchOffset: PropTypes.number.isRequired,
-  loading: PropTypes.bool
+  searchTerm: PropTypes.string
 };
 
 export default connect((state) => {
   return {
     imageSearchResults: state.imageSearch.images,
-    searchTerm: state.imageSearch.searchTerm,
     dispatch: state.dispatch,
+    loading: state.imageSearch.loading,
+    showMorePossible: state.imageSearch.showMorePossible,
     searchOffset: state.imageSearch.searchOffset,
-    loading: state.imageSearch.loading
+    searchTerm: state.imageSearch.searchTerm
   };
 })(BaseComponent);
