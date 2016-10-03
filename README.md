@@ -12,7 +12,7 @@ npm install
 ```
 npm start
 ```
-Then open [http://localhost:3001/webpack-dev-server/](http://localhost:3001/webpack-dev-server/)
+Then open [http://localhost:3001/webpack-dev-server/](http://localhost:3005/webpack-dev-server/)
 
 #### Lint the code (with eslint)
 ```
