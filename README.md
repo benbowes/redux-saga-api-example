@@ -1,15 +1,13 @@
 
 # A Giphy API with React, Redux and Redux Saga example
 
-<img src="https://media.giphy.com/media/3xz2BDFvxop2BfAQoM/giphy.gif" width="100%" />
+<img src="https://media.giphy.com/media/3xz2BDFvxop2BfAQoM/giphy.gif" />
 
 #### 1) Getting started.
 
 1. `npm install`
 2. `npm start`
-
-```
-Then open [http://localhost:3001/webpack-dev-server/](http://localhost:3005/webpack-dev-server/)
+3. Then open [http://localhost:3001/webpack-dev-server/](http://localhost:3005/webpack-dev-server/)
 
 #### Lint the code (with eslint)
 ```
