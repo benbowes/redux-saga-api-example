@@ -1,16 +1,13 @@
 
-# React / Redux / Redux Sagas implementation example
+# A Giphy API with React, Redux and Redux Saga example
 
+<img src="https://media.giphy.com/media/3xz2BDFvxop2BfAQoM/giphy.gif" width="100%" />
 
-#### 1) Install the dependencies.
+#### 1) Getting started.
 
-```
-npm install
-```
+1. `npm install`
+2. `npm start`
 
-#### 2) Start the app
-```
-npm start
 ```
 Then open [http://localhost:3001/webpack-dev-server/](http://localhost:3005/webpack-dev-server/)
 
@@ -31,6 +28,11 @@ npm test -- -w
 #### Distribute the code
 ```
 npm run dist
+```
+
+#### Deploy the code
+```
+npm run deploy
 ```
 
 #### Node and NPM versions
