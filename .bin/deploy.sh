@@ -19,7 +19,7 @@ git add -A
 git commit -m "Deploy to gh-pages..."
 
 # Push commited changes to master
-git push origin master
+git push upstream master
 
 # Push dist folder to gh-pages branch
-git subtree push --prefix dist origin gh-pages
+git subtree push --prefix dist upstream gh-pages
