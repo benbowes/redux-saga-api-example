@@ -1,3 +1,5 @@
-export const getSearchTermQuery = ( searchTerm ) => {
+const getSearchTermQuery = ( searchTerm ) => {
   return searchTerm && searchTerm.replace(/ /g,'+');
 };
+
+export default getSearchTermQuery;

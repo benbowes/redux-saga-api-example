@@ -2,13 +2,9 @@ import 'ignore-styles';
 import expect from 'expect';
 import React from 'react';
 import ReactTestUtils from 'react-addons-test-utils';
-import { LoadMoreButton, getSearchTermQuery } from './LoadMoreButton';
+import { LoadMoreButton } from './LoadMoreButton';
 
 describe('<LoadMoreButton />', () => {
-
-  it('getSearchTermQuery replace spaces with plus signs', () => {
-    expect( getSearchTermQuery('1 2 3 4 5') ).toEqual('1+2+3+4+5');
-  });
 
   it('LoadMoreButton should render as expected', () => {
     const renderer = ReactTestUtils.createRenderer();

@@ -1,6 +1,6 @@
 import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
-import { getSearchTermQuery } from '../helpers/getSearchTermQuery';
+import getSearchTermQuery from '../helpers/getSearchTermQuery';
 import * as styles from './SearchInput.css';
 
 class SearchInput extends Component {
