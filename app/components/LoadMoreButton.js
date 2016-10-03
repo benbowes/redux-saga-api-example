@@ -1,10 +1,13 @@
 import React, {PropTypes} from 'react';
-import { REQUEST_SHOW_MORE } from 'constants/actionTypes';
+import { REQUEST_SHOW_MORE } from '../constants/actionTypes';
 import * as styles from './LoadMoreButton.css';
 
-export const LoadMoreButton = (props) => {
-  const { dispatch, searchTerm, searchOffset } = props;
-  const searchTermQuery = searchTerm && searchTerm.replace(/ /g,'+');
+export const getSearchTermQuery = ( searchTerm ) => {
+  return searchTerm && searchTerm.replace(/ /g,'+');
+};
+
+export const LoadMoreButton = ({ dispatch, searchTerm, searchOffset, loading }) => {
+  const searchTermQuery = getSearchTermQuery(searchTerm);
   return (
     <button className={styles.button} onClick={() => {
       dispatch({
@@ -14,7 +17,7 @@ export const LoadMoreButton = (props) => {
           searchTerm: searchTerm
         }
       });
-    }}>
+    }} disabled={loading}>
       More results for &lsquo;{searchTerm}&rsquo;
     </button>
   );

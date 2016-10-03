@@ -6,6 +6,12 @@ then echo "ERROR! You have uncommited changes..." && exit 1;
 else echo "Deploy in progress...";
 fi
 
+# lint the code
+npm run lint
+
+# run the tests
+npm test
+
 # Build JS into dist/app.js
 npm run dist
 

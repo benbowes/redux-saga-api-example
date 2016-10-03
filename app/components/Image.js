@@ -6,12 +6,12 @@ import styles from './Image.css';
 * @description Stateless function component.
 * @returns {JSX} */
 
-export const Image = ( props ) => {
+export const Image = ({ image }) => {
   return (
-    <a href={props.image.url} className={styles.image}>
+    <a href={image.url} className={styles.image}>
       <PreloadFadeInImage
         className={styles.img}
-        imgSauce={props.image.images.fixed_width.url}
+        imgSauce={image.images.fixed_width.url}
       />
     </a>
   );

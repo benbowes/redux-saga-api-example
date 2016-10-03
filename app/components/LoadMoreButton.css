@@ -5,3 +5,11 @@
   padding: 20px 50px;
   align-self: center;
 }
+
+.button:disabled{
+  background-color: #ccc;
+  cursor: default;
+}
+.button:disabled:hover{
+  opacity: 1;
+}
