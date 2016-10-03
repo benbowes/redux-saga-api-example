@@ -17,7 +17,7 @@ export class BaseComponent extends Component {
     dispatch({
       type: REQUEST_SEARCH_DATA,
       payload: {
-        url: `http://api.giphy.com/v1/gifs/search?q=funny+dog&api_key=dc6zaTOxFJmzC&offset=${searchOffset}`,
+        url: `//api.giphy.com/v1/gifs/search?q=funny+dog&api_key=dc6zaTOxFJmzC&offset=${searchOffset}`,
         searchTerm: 'funny dog'
       }
     });

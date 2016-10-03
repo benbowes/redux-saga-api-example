@@ -19,7 +19,7 @@ class SearchInput extends Component {
       dispatch({
         type: 'REQUEST_SEARCH_DATA',
         payload: {
-          url: `http://api.giphy.com/v1/gifs/search?q=${this.refs.searchGiphyInput.value.replace(/ /g, '+')}&api_key=dc6zaTOxFJmzC`,
+          url: `//api.giphy.com/v1/gifs/search?q=${this.refs.searchGiphyInput.value.replace(/ /g, '+')}&api_key=dc6zaTOxFJmzC`,
           searchTerm: this.refs.searchGiphyInput.value
         }
       });

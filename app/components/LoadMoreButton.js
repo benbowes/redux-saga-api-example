@@ -10,7 +10,7 @@ export const LoadMoreButton = (props) => {
       dispatch({
         type: REQUEST_SHOW_MORE,
         payload: {
-          url: `http://api.giphy.com/v1/gifs/search?q=${searchTermQuery}&api_key=dc6zaTOxFJmzC&offset=${searchOffset}`,
+          url: `//api.giphy.com/v1/gifs/search?q=${searchTermQuery}&api_key=dc6zaTOxFJmzC&offset=${searchOffset}`,
           searchTerm: searchTerm
         }
       });
