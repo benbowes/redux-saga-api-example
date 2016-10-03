@@ -2,10 +2,6 @@ import React, { PropTypes } from 'react';
 import { PreloadFadeInImage } from './PreloadFadeInImage';
 import styles from './Image.css';
 
-/**
-* @description Stateless function component.
-* @returns {JSX} */
-
 export const Image = ({ image }) => {
   return (
     <a href={image.url} className={styles.image}>

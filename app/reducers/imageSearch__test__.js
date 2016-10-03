@@ -7,7 +7,6 @@ import {
   initialState
 } from './imageSearch';
 
-
 describe(`Reducers "getSearchOffset" function`, () => {
 
   it(`Returns searchOffset plus 25 if that is less than the total_count of results`, () => {

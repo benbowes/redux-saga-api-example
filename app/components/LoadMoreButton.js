@@ -1,10 +1,7 @@
 import React, {PropTypes} from 'react';
 import { REQUEST_SHOW_MORE } from '../constants/actionTypes';
+import { getSearchTermQuery } from '../helpers/getSearchTermQuery';
 import * as styles from './LoadMoreButton.css';
-
-export const getSearchTermQuery = ( searchTerm ) => {
-  return searchTerm && searchTerm.replace(/ /g,'+');
-};
 
 export const LoadMoreButton = ({ dispatch, searchTerm, searchOffset, loading }) => {
   const searchTermQuery = getSearchTermQuery(searchTerm);

@@ -1,16 +1,9 @@
 import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
+import { getSearchTermQuery } from '../helpers/getSearchTermQuery';
 import * as styles from './SearchInput.css';
 
-/**
-* @description Class component. Styles prefixed with `sg-` are coming in from a global stylesheet
-* @returns {JSX} */
-
 class SearchInput extends Component {
-
-  /**
-  * @param event {SyntheticEvent} React event that mimics a form submit event */
-
   addItemHandler( event ) {
     const { dispatch } = this.props;
     event.preventDefault();
@@ -19,7 +12,7 @@ class SearchInput extends Component {
       dispatch({
         type: 'REQUEST_SEARCH_DATA',
         payload: {
-          url: `//api.giphy.com/v1/gifs/search?q=${this.refs.searchGiphyInput.value.replace(/ /g, '+')}&api_key=dc6zaTOxFJmzC`,
+          url: `//api.giphy.com/v1/gifs/search?q=${getSearchTermQuery(this.refs.searchGiphyInput.value)}&api_key=dc6zaTOxFJmzC`,
           searchTerm: this.refs.searchGiphyInput.value
         }
       });
