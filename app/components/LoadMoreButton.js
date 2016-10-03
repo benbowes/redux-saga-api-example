@@ -18,7 +18,10 @@ export const LoadMoreButton = ({ dispatch, searchTerm, searchOffset, loading }) 
         }
       });
     }} disabled={loading}>
-      More results for &lsquo;{searchTerm}&rsquo;
+      {!loading
+        ? <span>More results for &lsquo;{searchTerm}&rsquo;</span>
+        : <span>Bringing the GIFs...</span>
+      }
     </button>
   );
 };
