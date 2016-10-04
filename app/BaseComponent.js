@@ -40,12 +40,13 @@ export class BaseComponent extends Component {
     return (
       <div className={styles.imageListing}>
       <h1 className={styles.h1}>
-        <span className={styles.heading}>You searched </span>
-        {searchTerm &&
-          <span>
-            <span className={styles.heading}>for</span>
-            <span className={styles.headingAlt}> {searchTerm}</span>
-          </span>
+        <span className={styles.heading}> </span>
+        {searchTerm
+          ? <span>
+              <span className={styles.heading}>You searched for</span>
+              <span className={styles.headingAlt}> {searchTerm}</span>
+            </span>
+          : <span className={styles.headingAlt}>Just a sec...</span>
         }
       </h1>
 
@@ -66,7 +67,7 @@ export class BaseComponent extends Component {
         <p className={styles.emptyMessage}>No GIFs here :(</p>
       }
 
-      {showMorePossible &&
+      {showMorePossible && totalResultsCount > 0 &&
         <LoadMoreButton
           dispatch={dispatch}
           searchOffset={searchOffset}
