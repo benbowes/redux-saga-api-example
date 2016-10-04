@@ -94,7 +94,8 @@ describe(`Reducers "imageSearch"`, () => {
       }],
       searchTerm: 'Some Search Query',
       showMorePossible: true,
-      searchOffset: 25
+      searchOffset: 25,
+      totalResultsCount: 3401
     });
   });
 
