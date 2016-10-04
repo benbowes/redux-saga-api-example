@@ -11,6 +11,7 @@ html {
 body {
   margin: 10px;
   background: darkslateblue;
+  background: linear-gradient(to right, #483d8b 0%,#84526e 100%);
   padding: 30px;
 }
 

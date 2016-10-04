@@ -6,9 +6,8 @@
 }
 
 .button:disabled{
-  background-color: #c1c1c1;
+  background-color: rgba(237,20,61,0.3);
   cursor: default;
-  color: darkslateblue;
 }
 .button:disabled:hover{
   opacity: 1;
