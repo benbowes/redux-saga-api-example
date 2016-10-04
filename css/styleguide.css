@@ -10,6 +10,12 @@ html {
 }
 
 body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+.root{
   margin: 10px;
   background: darkslateblue;
   background: linear-gradient(to right, #483d8b 0%,#84526e 100%);
