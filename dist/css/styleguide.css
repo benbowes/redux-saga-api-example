@@ -3,6 +3,7 @@ html {
   box-sizing: border-box;
   background: white;
   -webkit-font-smoothing: antialiased;
+  height: 100%;
 }
 *, *:before, *:after {
   box-sizing: inherit;
@@ -13,6 +14,7 @@ body {
   background: darkslateblue;
   background: linear-gradient(to right, #483d8b 0%,#84526e 100%);
   padding: 30px;
+  min-height: 100%;
 }
 
 :focus {
