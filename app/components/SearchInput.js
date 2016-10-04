@@ -35,7 +35,10 @@ class SearchInput extends Component {
           />
 
           <button className={styles.button} title={'Search Giphy'} type={'submit'} label={'Search'}>
-            {isLoading ? 'loading...' : 'Search Giphy'}
+            {isLoading
+              ? 'Loading'
+              : 'Search Giphy'
+            }
           </button>
 
         </form>
