@@ -6,7 +6,7 @@ import * as styles from './LoadMoreButton.css';
 export const LoadMoreButton = ({ dispatch, searchTerm, searchOffset, loading }) => {
   const searchTermQuery = getSearchTermQuery(searchTerm);
   return (
-    <button className={styles.button} onClick={() => {
+    <button className={loading ? styles.buttonDisabled : styles.button} onClick={() => {
       dispatch({
         type: REQUEST_SHOW_MORE,
         payload: {

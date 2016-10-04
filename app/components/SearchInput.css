@@ -10,7 +10,12 @@
 }
 
 .button{
-  composes: button from "../shared-css/shared.css";
+  composes: sharedButton from "../shared-css/shared.css";
+}
+
+.buttonDisabled{
+  composes: button;
+  composes: sharedButtonDisabled from "../shared-css/shared.css";
 }
 
 .form{

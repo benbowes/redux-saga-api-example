@@ -21,7 +21,7 @@ class SearchInput extends Component {
   }
 
   render() {
-    const { isLoading } = this.props;
+    const { loading } = this.props;
     return (
       <div>
         <form onSubmit={(event) => this.addItemHandler( event )} className={`sg-row ${styles.form}`}>
@@ -34,8 +34,8 @@ class SearchInput extends Component {
             autoFocus
           />
 
-          <button className={styles.button} title={'Search Giphy'} type={'submit'} label={'Search'}>
-            {isLoading
+          <button className={loading ? styles.buttonDisabled : styles.button} title={'Search Giphy'} type={'submit'} label={'Search'}>
+            {loading
               ? 'Loading'
               : 'Search Giphy'
             }
@@ -50,12 +50,12 @@ class SearchInput extends Component {
 
 SearchInput.propTypes = {
   dispatch: PropTypes.func.isRequired,
-  isLoading: PropTypes.bool.isRequired
+  loading: PropTypes.bool.isRequired
 };
 
 export default connect((state) => {
   return {
     dispatch: state.dispatch,
-    isLoading: state.imageSearch.loading
+    loading: state.imageSearch.loading
   };
 })(SearchInput);

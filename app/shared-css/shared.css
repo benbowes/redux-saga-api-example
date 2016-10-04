@@ -1,4 +1,4 @@
-.button{
+.sharedButton{
   cursor: pointer;
   font-size: 14px;
   border-radius: 3px 30px 30px 3px;
@@ -10,11 +10,17 @@
   background: crimson;
   font-weight: bold;
 }
-
-.button:HOVER{
+.sharedButton:HOVER{
   opacity: 0.8;
 }
-
-.button:ACTIVE{
+.sharedButton:ACTIVE{
   opacity: 0.9;
+}
+
+.sharedButtonDisabled{
+  background-color: rgba(237,20,61,0.3);
+  cursor: default;
+}
+.sharedButtonDisabled:HOVER{
+  opacity: 1;
 }

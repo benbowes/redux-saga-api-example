@@ -1,14 +1,11 @@
 .button{
-  composes: button from "../shared-css/shared.css";
+  composes: sharedButton from "../shared-css/shared.css";
   margin: 60px 0;
   padding: 20px 50px;
   align-self: center;
 }
 
-.button:disabled{
-  background-color: rgba(237,20,61,0.3);
-  cursor: default;
-}
-.button:disabled:hover{
-  opacity: 1;
+.buttonDisabled{
+  composes: button;
+  composes: sharedButtonDisabled from "../shared-css/shared.css";
 }
