@@ -11,7 +11,8 @@ export const initialState = {
   showMorePossible: true,
   messages: undefined,
   searchTerm: undefined,
-  searchOffset: 0
+  searchOffset: 0,
+  totalResultsCount: undefined
 };
 
 export const getSearchOffset = (searchOffset, data) => {
@@ -50,7 +51,8 @@ export const imageSearch = ( state = initialState, action = {} ) => {
       showMorePossible: getShowMorePossible( state.searchOffset, action.payload.receivedData ),
       searchTerm: action.payload.searchTerm,
       images: [...state.images, ...action.payload.receivedData.data],
-      searchOffset: getSearchOffset( state.searchOffset, action.payload.receivedData )
+      searchOffset: getSearchOffset( state.searchOffset, action.payload.receivedData ),
+      totalResultsCount: action.payload.receivedData.pagination.total_count
     };
 
   case RECEIVE_SEARCH_DATA_FAILED:

@@ -32,7 +32,7 @@ describe('<LoadMoreButton />', () => {
     );
     const ReactComponent = renderer.getRenderOutput();
     expect( ReactComponent.props.disabled ).toEqual(true);
-    expect( ReactComponent.props.children.props.children ).toEqual('Requesting more GIFs...');
+    expect( ReactComponent.props.children.props.children ).toEqual('Requesting GIFs...');
   });
 
 });

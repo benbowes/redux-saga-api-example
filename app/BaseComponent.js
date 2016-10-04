@@ -33,7 +33,8 @@ export class BaseComponent extends Component {
       loading,
       searchTerm,
       showMorePossible,
-      searchOffset
+      searchOffset,
+      totalResultsCount
     } = this.props;
 
     return (
@@ -61,6 +62,10 @@ export class BaseComponent extends Component {
         </ol>
       }
 
+      {totalResultsCount < 1 &&
+        <p className={styles.emptyMessage}>No GIFs found :(</p>
+      }
+
       {showMorePossible &&
         <LoadMoreButton
           dispatch={dispatch}
@@ -80,7 +85,8 @@ BaseComponent.propTypes = {
   loading: PropTypes.bool.isRequired,
   showMorePossible: PropTypes.bool.isRequired,
   searchOffset: PropTypes.number.isRequired,
-  searchTerm: PropTypes.string
+  searchTerm: PropTypes.string,
+  totalResultsCount: PropTypes.number
 };
 
 export default connect((state) => {
@@ -90,6 +96,7 @@ export default connect((state) => {
     loading: state.imageSearch.loading,
     showMorePossible: state.imageSearch.showMorePossible,
     searchOffset: state.imageSearch.searchOffset,
-    searchTerm: state.imageSearch.searchTerm
+    searchTerm: state.imageSearch.searchTerm,
+    totalResultsCount: state.imageSearch.totalResultsCount
   };
 })(BaseComponent);

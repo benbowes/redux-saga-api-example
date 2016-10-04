@@ -47,3 +47,8 @@
   font-family: Georgia, serif;
   font-style: italic;
 }
+
+.emptyMessage{
+  color: #fff;
+  text-align: center;
+}
