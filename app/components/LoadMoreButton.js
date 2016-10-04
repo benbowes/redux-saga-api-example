@@ -17,7 +17,7 @@ export const LoadMoreButton = ({ dispatch, searchTerm, searchOffset, loading }) 
     }} disabled={loading}>
       {!loading
         ? <span>More results for &lsquo;{searchTerm}&rsquo;</span>
-        : <span>Delivering the GIFs...</span>
+        : <span>Requesting more GIFs...</span>
       }
     </button>
   );
