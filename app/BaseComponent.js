@@ -63,7 +63,7 @@ export class BaseComponent extends Component {
       }
 
       {totalResultsCount < 1 &&
-        <p className={styles.emptyMessage}>No GIFs found :(</p>
+        <p className={styles.emptyMessage}>No GIFs here :(</p>
       }
 
       {showMorePossible &&
