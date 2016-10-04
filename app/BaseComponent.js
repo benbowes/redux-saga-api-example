@@ -12,7 +12,7 @@ export class BaseComponent extends Component {
 
   constructor(){
     super();
-    this.initialSearchTerm = 'Artist';
+    this.initialSearchTerm = 'Art';
   }
 
   componentDidMount() {
