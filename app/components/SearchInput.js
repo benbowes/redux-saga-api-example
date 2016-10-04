@@ -50,7 +50,7 @@ class SearchInput extends Component {
 
 SearchInput.propTypes = {
   dispatch: PropTypes.func.isRequired,
-  loading: PropTypes.bool.isRequired
+  loading: PropTypes.bool
 };
 
 export default connect((state) => {

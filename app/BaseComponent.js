@@ -10,18 +10,13 @@ import * as styles from './BaseComponent.css';
 
 export class BaseComponent extends Component {
 
-  constructor(){
-    super();
-    this.initialSearchTerm = 'Art';
-  }
-
   componentDidMount() {
-    const { dispatch, searchOffset } = this.props;
+    const { dispatch, searchOffset, searchTerm } = this.props;
     dispatch({
       type: REQUEST_SEARCH_DATA,
       payload: {
-        url: `//api.giphy.com/v1/gifs/search?q=${getSearchTermQuery(this.initialSearchTerm)}&api_key=dc6zaTOxFJmzC&offset=${searchOffset}`,
-        searchTerm: this.initialSearchTerm
+        url: `//api.giphy.com/v1/gifs/search?q=${getSearchTermQuery(searchTerm)}&api_key=dc6zaTOxFJmzC&offset=${searchOffset}`,
+        searchTerm: searchTerm
       }
     });
   }
@@ -82,10 +77,10 @@ export class BaseComponent extends Component {
 
 BaseComponent.propTypes = {
   dispatch: PropTypes.func.isRequired,
-  imageSearchResults: PropTypes.array.isRequired,
-  loading: PropTypes.bool.isRequired,
-  showMorePossible: PropTypes.bool.isRequired,
-  searchOffset: PropTypes.number.isRequired,
+  imageSearchResults: PropTypes.array,
+  loading: PropTypes.bool,
+  showMorePossible: PropTypes.bool,
+  searchOffset: PropTypes.number,
   searchTerm: PropTypes.string,
   totalResultsCount: PropTypes.number
 };

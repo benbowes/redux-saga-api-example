@@ -2,4 +2,9 @@
 * @description initial state that we inject into our redux store at bootup.
 */
 
-export const initialState = {};
+export const initialState = {
+  imageSearch: {
+    searchTerm: 'Art',
+    searchOffset: 0
+  }
+};
