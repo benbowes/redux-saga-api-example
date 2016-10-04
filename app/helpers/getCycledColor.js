@@ -1,14 +1,12 @@
 export const colors = [
   'mediumpurple',
-  'mediumaquamarine',
-  'mediumorchid',
+  'darkorchid',
+  '#5e55d3',
   'blueviolet',
   'mediumpurple',
   'mediumseagreen',
-  'mediumslateblue',
-  'mediumspringgreen',
-  'mediumturquoise',
-  'mediumvioletred'
+  '#6ddc81',
+  '#7e57d0'
 ];
 
 const colorsLength = colors.length;

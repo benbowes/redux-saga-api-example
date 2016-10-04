@@ -6,9 +6,9 @@
 }
 
 .button:disabled{
-  background-color: #fff;
+  background-color: #c1c1c1;
   cursor: default;
-  color: crimson;
+  color: darkslateblue;
 }
 .button:disabled:hover{
   opacity: 1;

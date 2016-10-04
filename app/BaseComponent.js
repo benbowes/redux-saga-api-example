@@ -38,7 +38,15 @@ export class BaseComponent extends Component {
 
     return (
       <div className={styles.imageListing}>
-      <h1 className={styles.heading}>You searched {searchTerm && <span>for &lsquo;{searchTerm}&rsquo;</span>}</h1>
+      <h1 className={styles.h1}>
+        <span className={styles.heading}>You searched </span>
+        {searchTerm &&
+          <span>
+            <span className={styles.heading}>for</span>
+            <span className={styles.headingAlt}> {searchTerm}</span>
+          </span>
+        }
+      </h1>
 
       <SearchInput dispatch={dispatch} />
 
