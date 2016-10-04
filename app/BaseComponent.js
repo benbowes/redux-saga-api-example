@@ -4,21 +4,24 @@ import { REQUEST_SEARCH_DATA } from 'constants/actionTypes';
 import { Image } from 'components/Image';
 import { LoadMoreButton } from 'components/LoadMoreButton';
 import SearchInput from 'components/SearchInput';
+import getSearchTermQuery from 'helpers/getSearchTermQuery';
+import getCycledColor from 'helpers/getCycledColor';
 import * as styles from './BaseComponent.css';
 
-/**
-* @description ES6 class component. The root component...
-* @returns {JSX} */
-
 export class BaseComponent extends Component {
+
+  constructor(){
+    super();
+    this.initialSearchTerm = 'funny dog';
+  }
 
   componentDidMount() {
     const { dispatch, searchOffset } = this.props;
     dispatch({
       type: REQUEST_SEARCH_DATA,
       payload: {
-        url: `//api.giphy.com/v1/gifs/search?q=funny+dog&api_key=dc6zaTOxFJmzC&offset=${searchOffset}`,
-        searchTerm: 'funny dog'
+        url: `//api.giphy.com/v1/gifs/search?q=${getSearchTermQuery(this.initialSearchTerm)}&api_key=dc6zaTOxFJmzC&offset=${searchOffset}`,
+        searchTerm: this.initialSearchTerm
       }
     });
   }
@@ -42,7 +45,7 @@ export class BaseComponent extends Component {
       {imageSearchResults && imageSearchResults.length > 0 &&
         <ol className={styles.imageListingItems}>
           {imageSearchResults.map((imageData, index) =>
-            <li key={`${imageData.id}-${index}`} className={styles.imageListingItem}>
+            <li key={`${imageData.id}-${index}`} style={{backgroundColor: getCycledColor(index)}} className={styles.imageListingItem}>
               <Image image={imageData} />
             </li>
           )

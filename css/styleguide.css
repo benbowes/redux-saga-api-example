@@ -1,7 +1,7 @@
 html {
   font: normal 14px/1.4 'Helvetica Neue', Helvetica, sans-serif;
   box-sizing: border-box;
-  background: #f1f1f1;
+  background: darkslateblue;
   -webkit-font-smoothing: antialiased;
 }
 *, *:before, *:after {
