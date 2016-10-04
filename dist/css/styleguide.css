@@ -1,11 +1,17 @@
 html {
   font: normal 14px/1.4 'Helvetica Neue', Helvetica, sans-serif;
   box-sizing: border-box;
-  background: darkslateblue;
+  background: white;
   -webkit-font-smoothing: antialiased;
 }
 *, *:before, *:after {
   box-sizing: inherit;
+}
+
+body {
+  margin: 10px;
+  background: darkslateblue;
+  padding: 30px;
 }
 
 :focus {
