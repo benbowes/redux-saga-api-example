@@ -45,3 +45,8 @@ This app was built with these versions of node and npm
 ```
 npm run
 ```
+
+### Todo
+- Copy/paste embed code
+- Add React Router
+- Add Infinite scroll
