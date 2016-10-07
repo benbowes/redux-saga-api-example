@@ -1,6 +1,8 @@
 
 # A Giphy API with React, Redux and Redux Saga example
 
+![Build status](https://api.travis-ci.org/benbowes/redux-saga-api-example.svg)
+
 <img src="https://media.giphy.com/media/3xz2BDFvxop2BfAQoM/giphy.gif" />
 
 #### 1) Getting started.
