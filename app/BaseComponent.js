@@ -25,7 +25,7 @@ export class BaseComponent extends Component {
     const {
       dispatch,
       imageSearchResults,
-      loading,
+      isLoading,
       searchTerm,
       showMorePossible,
       searchOffset,
@@ -67,7 +67,7 @@ export class BaseComponent extends Component {
           dispatch={dispatch}
           searchOffset={searchOffset}
           searchTerm={searchTerm}
-          loading={loading}
+          isLoading={isLoading}
         />
       }
       </div>
@@ -78,7 +78,7 @@ export class BaseComponent extends Component {
 BaseComponent.propTypes = {
   dispatch: PropTypes.func.isRequired,
   imageSearchResults: PropTypes.array,
-  loading: PropTypes.bool,
+  isLoading: PropTypes.bool,
   showMorePossible: PropTypes.bool,
   searchOffset: PropTypes.number,
   searchTerm: PropTypes.string,
@@ -89,7 +89,7 @@ export default connect((state) => {
   return {
     imageSearchResults: state.imageSearch.images,
     dispatch: state.dispatch,
-    loading: state.imageSearch.loading,
+    isLoading: state.imageSearch.isLoading,
     showMorePossible: state.imageSearch.showMorePossible,
     searchOffset: state.imageSearch.searchOffset,
     searchTerm: state.imageSearch.searchTerm,

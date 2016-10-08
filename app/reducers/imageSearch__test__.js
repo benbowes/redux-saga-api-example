@@ -42,19 +42,19 @@ describe(`Reducers "imageSearch"`, () => {
     expect(result).toEqual(initialState);
   });
 
-  it(`It should set loading:true when REQUEST_SEARCH_DATA`, () => {
+  it(`It should set isLoading:true when REQUEST_SEARCH_DATA`, () => {
     const result = imageSearch(undefined, {type: actionTypes.REQUEST_SEARCH_DATA});
     expect(result).toEqual({
       ...initialState,
-      loading: true
+      isLoading: true
     });
   });
 
-  it(`It should set loading:true when REQUEST_SHOW_MORE`, () => {
+  it(`It should set isLoading:true when REQUEST_SHOW_MORE`, () => {
     const result = imageSearch(initialState, {type: actionTypes.REQUEST_SEARCH_DATA});
     expect(result).toEqual({
       ...initialState,
-      loading: true
+      isLoading: true
     });
   });
 
@@ -108,7 +108,7 @@ describe(`Reducers "imageSearch"`, () => {
     });
     expect(result).toEqual({
       ...initialState,
-      loading: false,
+      isLoading: false,
       messages: 'Oh dear, all the things just died :(',
       searchTerm: 'Some Search Query'
     });

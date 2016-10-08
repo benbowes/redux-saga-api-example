@@ -7,7 +7,7 @@ import {
 
 export const initialState = {
   images: [],
-  loading: false,
+  isLoading: false,
   showMorePossible: true,
   messages: undefined,
   searchTerm: undefined,
@@ -34,19 +34,19 @@ export const imageSearch = ( state = initialState, action = {} ) => {
   case REQUEST_SEARCH_DATA:
     return {
       ...initialState,
-      loading: true
+      isLoading: true
     };
 
   case REQUEST_SHOW_MORE:
     return {
       ...state,
-      loading: true
+      isLoading: true
     };
 
   case RECEIVE_SEARCH_DATA:
     return {
       ...state,
-      loading: false,
+      isLoading: false,
       messages: undefined,
       showMorePossible: getShowMorePossible( state.searchOffset, action.payload.receivedData ),
       searchTerm: action.payload.searchTerm,
@@ -58,7 +58,7 @@ export const imageSearch = ( state = initialState, action = {} ) => {
   case RECEIVE_SEARCH_DATA_FAILED:
     return {
       ...state,
-      loading: false,
+      isLoading: false,
       messages: 'Oh dear, all the things just died :(',
       searchTerm: action.payload.searchTerm
     };

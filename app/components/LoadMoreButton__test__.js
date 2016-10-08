@@ -12,7 +12,7 @@ describe('<LoadMoreButton />', () => {
       <LoadMoreButton
         searchTerm={'Some searchTerm'}
         searchOffset={12}
-        loading={false}
+        isLoading={false}
       />
     );
     const ReactComponent = renderer.getRenderOutput();
@@ -21,13 +21,13 @@ describe('<LoadMoreButton />', () => {
     expect( ReactComponent.props.children.props.children ).toEqual([ 'More results for ‘', 'Some searchTerm', '’' ]);
   });
 
-  it('LoadMoreButton should get disabled when loading', () => {
+  it('LoadMoreButton should get disabled when isLoading', () => {
     const renderer = ReactTestUtils.createRenderer();
     renderer.render(
       <LoadMoreButton
         searchTerm={'Some searchTerm'}
         searchOffset={12}
-        loading
+        isLoading
       />
     );
     const ReactComponent = renderer.getRenderOutput();
