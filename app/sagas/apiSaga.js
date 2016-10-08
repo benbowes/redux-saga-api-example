@@ -1,6 +1,7 @@
 import { takeEvery } from 'redux-saga';
 import { put, call } from 'redux-saga/effects';
 import { fetchJsonWrapper } from './helpers/fetchJsonWrapper';
+import getSearchTermQuery from '../helpers/getSearchTermQuery';
 import {
   RECEIVE_SEARCH_DATA,
   REQUEST_SEARCH_DATA,
@@ -13,8 +14,14 @@ import {
 * Passes server error and failed action through via RECEIVE_SEARCH_DATA_FAILED action */
 
 export function* fetchData( action ) {
+
+  const { searchOffset, searchTerm } = action.payload;
+  const apiKey = 'api_key=dc6zaTOxFJmzC';
+  const query = getSearchTermQuery(searchTerm);
+  const searchURL = `//api.giphy.com/v1/gifs/search?q=${query}&offset=${searchOffset}&${apiKey}`;
+
   try {
-    const receivedData = yield call( fetchJsonWrapper, action.payload.url );
+    const receivedData = yield call( fetchJsonWrapper, searchURL );
 
     if ( receivedData.ok ) {
       yield put({

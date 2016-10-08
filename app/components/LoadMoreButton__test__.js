@@ -2,7 +2,7 @@ import 'ignore-styles';
 import expect from 'expect';
 import React from 'react';
 import ReactTestUtils from 'react-addons-test-utils';
-import { LoadMoreButton } from './LoadMoreButton';
+import LoadMoreButton from './LoadMoreButton';
 
 describe('<LoadMoreButton />', () => {
 

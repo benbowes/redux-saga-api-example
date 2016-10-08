@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import { GIF_MODAL_CANCEL_REQUEST_IMAGE } from '../constants/actionTypes';
 import styles from './GifModal.css';
 
-export class GifModal extends Component {
+export default class GifModal extends Component {
 
   componentDidUpdate() {
     const { fullImage, modalIsLoading } = this.props;
@@ -38,13 +38,13 @@ export class GifModal extends Component {
           ? <div>
               <div className={styles.loadingSpinner}></div>
               <img
+                alt="Full Image"
                 className={styles.imgLoading}
                 src={thumbImage.url}
                 style={{
                   width: thumbImage.width,
                   height: thumbImage.height
                 }}
-                alt="Full Image"
               />
             </div>
           : <img className={styles.img} src={fullImage} alt="Full Image" />

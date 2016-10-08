@@ -1,17 +1,19 @@
 import React, { Component, PropTypes } from 'react';
-import { PreloadFadeInImage } from './PreloadFadeInImage';
+import PreloadFadeInImage from './PreloadFadeInImage';
 import { GIF_MODAL_REQUEST_IMAGE } from '../constants/actionTypes';
 import styles from './Image.css';
 
-export class Image extends Component {
+export default class Image extends Component {
 
-  constructor(){
+  constructor (){
     super();
     this.setSelection = this.setSelection.bind(this);
     this.selectImage = this.selectImage.bind(this);
   }
 
-  // Select all the text on focus for easy copy/pasting
+  /**
+  Select all the text on focus for easy copy/pasting */
+
   setSelection (e) {
     e.target.setSelectionRange(0, e.target.value.length);
   }
@@ -21,19 +23,18 @@ export class Image extends Component {
     e.preventDefault();
 
     /**
-    Open modal with thumb inage, but with full image's dimensions
-    Then request full image via a preloader which jams it into redux as `modal.fullImage` when loaded
-    */
+    Open modal with thumb inage at full image's dimensions
+    Then request full image via a preloader which jams it's url into redux as `modal.fullImage` when loaded */
 
     dispatch({
       type: GIF_MODAL_REQUEST_IMAGE,
       payload: {
+        requestedImage: image.images.original.url,
         thumbImage: {
           url: image.images.fixed_width.url,
           width: `${image.images.original.width}px`,
           height: `${image.images.original.height}px`
-        },
-        requestedImage: image.images.original.url
+        }
       }
     });
   }
@@ -50,7 +51,8 @@ export class Image extends Component {
           />
         </a>
 
-        <label className={styles.githubEmbedLabel}>Github embed code
+        <label className={styles.githubEmbedLabel}>
+          Github embed code
           <input
             onFocus={this.setSelection}
             className={styles.githubEmbedInput}

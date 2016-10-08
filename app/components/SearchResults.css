@@ -1,0 +1,27 @@
+.imageListingItems{
+  list-style: none;
+  padding: 0;
+  margin: 0 -8px 0 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.imageListingItem{
+  border-radius: 3px 30px;
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  margin: 0 8px 8px 0;
+  height: 290px;
+  width: 240px;
+  overflow: hidden;
+  background: #fff;
+}
+
+.imageListing{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  flex-direction: column;
+}

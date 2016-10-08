@@ -1,26 +1,13 @@
 import React, { PropTypes, Component } from 'react';
 import { connect } from 'react-redux';
-import { REQUEST_SEARCH_DATA } from 'constants/actionTypes';
-import { Image } from 'components/Image';
-import { GifModal } from 'components/GifModal';
-import { LoadMoreButton } from 'components/LoadMoreButton';
+import GifModal from 'components/GifModal';
+import LoadMoreButton from 'components/LoadMoreButton';
+import Heading from 'components/Heading';
 import SearchInput from 'components/SearchInput';
-import getSearchTermQuery from 'helpers/getSearchTermQuery';
-import getCycledColor from 'helpers/getCycledColor';
+import SearchResults from 'components/SearchResults';
 import * as styles from './BaseComponent.css';
 
 export class BaseComponent extends Component {
-
-  componentDidMount() {
-    const { dispatch, searchOffset, searchTerm } = this.props;
-    dispatch({
-      type: REQUEST_SEARCH_DATA,
-      payload: {
-        url: `//api.giphy.com/v1/gifs/search?q=${getSearchTermQuery(searchTerm)}&api_key=dc6zaTOxFJmzC&offset=${searchOffset}`,
-        searchTerm: searchTerm
-      }
-    });
-  }
 
   render() {
     const {
@@ -38,35 +25,10 @@ export class BaseComponent extends Component {
 
     return (
       <div className={styles.imageListing}>
-
         <GifModal dispatch={dispatch} thumbImage={thumbImage} fullImage={fullImage} modalIsLoading={modalIsLoading} />
-
-        <h1 className={styles.h1}>
-          <span className={styles.heading}> </span>
-          {!isLoading
-            ? <span>
-                <span className={styles.heading}>You searched for</span>
-                <span className={styles.headingAlt}> {searchTerm}</span>
-              </span>
-            : <span>
-                <span className={styles.heading}>Looking for</span>
-                <span className={styles.headingAlt}> {searchTerm}...</span>
-              </span>
-          }
-        </h1>
-
+        <Heading isLoading={isLoading} searchTerm={searchTerm} />
         <SearchInput dispatch={dispatch} />
-
-        {imageSearchResults && imageSearchResults.length > 0 &&
-          <ol className={styles.imageListingItems}>
-            {imageSearchResults.map((imageData, index) =>
-              <li key={`${imageData.id}-${index}`} style={{backgroundColor: getCycledColor(index)}} className={styles.imageListingItem}>
-                <Image image={imageData} dispatch={dispatch} />
-              </li>
-            )
-            }
-          </ol>
-        }
+        <SearchResults dispatch={dispatch} imageSearchResults={imageSearchResults} />
 
         {totalResultsCount < 1 &&
           <p className={styles.emptyMessage}>No GIFs here :(</p>
