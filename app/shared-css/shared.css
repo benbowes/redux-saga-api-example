@@ -18,6 +18,7 @@
 }
 
 .sharedButtonDisabled{
+  composes: sharedButton;
   background-color: rgba(237,20,61,0.3);
   cursor: default;
 }

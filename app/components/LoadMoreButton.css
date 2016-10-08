@@ -6,6 +6,5 @@
 }
 
 .buttonDisabled{
-  composes: button;
   composes: sharedButtonDisabled from "../shared-css/shared.css";
 }
