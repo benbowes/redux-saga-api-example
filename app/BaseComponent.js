@@ -36,12 +36,15 @@ export class BaseComponent extends Component {
       <div className={styles.imageListing}>
       <h1 className={styles.h1}>
         <span className={styles.heading}> </span>
-        {searchTerm
+        {!isLoading
           ? <span>
               <span className={styles.heading}>You searched for</span>
               <span className={styles.headingAlt}> {searchTerm}</span>
             </span>
-          : <span className={styles.headingAlt}>Just a sec...</span>
+          : <span>
+              <span className={styles.heading}>Looking for</span>
+              <span className={styles.headingAlt}> {searchTerm}...</span>
+            </span>
         }
       </h1>
 

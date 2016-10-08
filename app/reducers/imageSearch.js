@@ -34,7 +34,8 @@ export const imageSearch = ( state = initialState, action = {} ) => {
   case REQUEST_SEARCH_DATA:
     return {
       ...initialState,
-      isLoading: true
+      isLoading: true,
+      searchTerm: action.payload.searchTerm
     };
 
   case REQUEST_SHOW_MORE:
