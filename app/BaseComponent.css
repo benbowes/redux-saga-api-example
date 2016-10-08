@@ -1,3 +1,16 @@
+.githubLink{
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 16px;
+  opacity: 1;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.githubLink:HOVER{
+  transition: opacity 0s;
+  opacity: 0.5;
+}
 
 .emptyMessage{
   color: rgba(255,255,255,0.5);
