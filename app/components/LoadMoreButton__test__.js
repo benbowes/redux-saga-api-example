@@ -16,9 +16,9 @@ describe('<LoadMoreButton />', () => {
       />
     );
     const ReactComponent = renderer.getRenderOutput();
-    expect( ReactComponent.type ).toEqual('button');
-    expect( ReactComponent.props.disabled ).toEqual(false);
-    expect( ReactComponent.props.children.props.children ).toEqual([ 'More results for ‘', 'Some searchTerm', '’' ]);
+    expect( ReactComponent.props.children.type ).toEqual('button');
+    expect( ReactComponent.props.children.props.disabled ).toEqual(false);
+    expect( ReactComponent.props.children.props.children.props.children ).toEqual([ 'More results for ‘', 'Some searchTerm', '’' ]);
   });
 
   it('LoadMoreButton should get disabled when isLoading', () => {
@@ -31,8 +31,8 @@ describe('<LoadMoreButton />', () => {
       />
     );
     const ReactComponent = renderer.getRenderOutput();
-    expect( ReactComponent.props.disabled ).toEqual(true);
-    expect( ReactComponent.props.children.props.children ).toEqual('Requesting GIFs...');
+    expect( ReactComponent.props.children.props.disabled ).toEqual(true);
+    expect( ReactComponent.props.children.props.children.props.children ).toEqual('Requesting GIFs...');
   });
 
 });

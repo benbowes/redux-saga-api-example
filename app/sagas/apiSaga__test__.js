@@ -34,7 +34,7 @@ describe(`Saga "apiSaga"`, () => {
     const action = {
       type: actionTypes.REQUEST_SEARCH_DATA,
       payload: {
-        url: 'http://someurl.com',
+        searchOffset: 0,
         searchTerm: 'Some search term'
       }
     };
@@ -43,11 +43,11 @@ describe(`Saga "apiSaga"`, () => {
 
     let result = generator.next();
 
-    expect( result.value ).toEqual( call(fetchJsonWrapper, action.payload.url) );
+    expect( result.value ).toEqual( call(fetchJsonWrapper, '//api.giphy.com/v1/gifs/search?q=Some+search+term&offset=0&api_key=dc6zaTOxFJmzC') );
 
     expect( result.value.CALL.fn ).toEqual( fetchJsonWrapper );
 
-    expect( result.value.CALL.args ).toEqual( 'http://someurl.com' );
+    expect( result.value.CALL.args ).toEqual( '//api.giphy.com/v1/gifs/search?q=Some+search+term&offset=0&api_key=dc6zaTOxFJmzC' );
 
     result = generator.next({ 'some': 'data', 'ok': true });
 
@@ -74,7 +74,7 @@ describe(`Saga "apiSaga"`, () => {
     const action = {
       type: actionTypes.REQUEST_SEARCH_DATA,
       payload: {
-        url: 'http://someurl.com',
+        searchOffset: 0,
         searchTerm: 'Some search term'
       }
     };
@@ -95,7 +95,7 @@ describe(`Saga "apiSaga"`, () => {
       .toEqual({
         type: actionTypes.REQUEST_SEARCH_DATA,
         payload: {
-          url: 'http://someurl.com',
+          searchOffset: 0,
           searchTerm: 'Some search term'
         }
       });

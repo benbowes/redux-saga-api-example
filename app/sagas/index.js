@@ -5,7 +5,7 @@
 import { call, fork, put, select } from 'redux-saga/effects';
 import { listenForDataRequests, listenForShowMoreRequests } from './apiSaga';
 import { listenForGifModalImageRequests } from './gifModalImagesSaga';
-import { REQUEST_SEARCH_DATA } from 'constants/actionTypes';
+import { REQUEST_SEARCH_DATA } from '../constants/actionTypes';
 
 export function* bootstrap() {
 
