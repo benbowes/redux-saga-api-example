@@ -1,5 +1,5 @@
 
-# A Giphy API with React, Redux, Redux Saga and CSS Modules example
+# A Giphy API example utilising React, Redux, Redux Saga and CSS Modules
 
 ![Build status](https://api.travis-ci.org/benbowes/redux-saga-api-example.svg)
 
