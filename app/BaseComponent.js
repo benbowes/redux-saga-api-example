@@ -93,7 +93,13 @@ BaseComponent.propTypes = {
   showMorePossible: PropTypes.bool,
   searchOffset: PropTypes.number,
   searchTerm: PropTypes.string,
-  totalResultsCount: PropTypes.number
+  totalResultsCount: PropTypes.number,
+  modalIsLoading: PropTypes.bool,
+  thumbImage: PropTypes.shape({
+    url: PropTypes.string.isRequired,
+    width: PropTypes.string.isRequired,
+    height: PropTypes.string.isRequired
+  })
 };
 
 export default connect((state) => {

@@ -11,7 +11,7 @@ export const fetchImageWrapper = ( URL ) => {
   .then( URL => URL )
 
   .catch( err => {
-    console.log('Oh dear', err);
+    console.log('Oh dear', err, URL);
   });
 
 };
