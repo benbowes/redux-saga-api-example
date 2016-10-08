@@ -4,7 +4,7 @@
 
 export const initialState = {
   imageSearch: {
-    searchTerm: 'Art',
+    searchTerm: 'Michael Bolton',
     searchOffset: 0
   }
 };
