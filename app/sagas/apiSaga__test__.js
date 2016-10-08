@@ -3,7 +3,7 @@ import expect from 'expect';
 import { take, call, put } from 'redux-saga/effects';
 import * as actionTypes from '../constants/actionTypes';
 import { fetchData, listenForDataRequests } from './apiSaga';
-import { fetchWrapper } from './helpers/fetchWrapper';
+import { fetchJsonWrapper } from './helpers/fetchJsonWrapper';
 
 describe(`Saga "apiSaga"`, () => {
 
@@ -43,9 +43,9 @@ describe(`Saga "apiSaga"`, () => {
 
     let result = generator.next();
 
-    expect( result.value ).toEqual( call(fetchWrapper, action.payload.url) );
+    expect( result.value ).toEqual( call(fetchJsonWrapper, action.payload.url) );
 
-    expect( result.value.CALL.fn ).toEqual( fetchWrapper );
+    expect( result.value.CALL.fn ).toEqual( fetchJsonWrapper );
 
     expect( result.value.CALL.args ).toEqual( 'http://someurl.com' );
 

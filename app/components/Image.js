@@ -1,5 +1,6 @@
 import React, { Component, PropTypes } from 'react';
 import { PreloadFadeInImage } from './PreloadFadeInImage';
+import { GIF_MODAL_REQUEST_IMAGE } from '../constants/actionTypes';
 import styles from './Image.css';
 
 export class Image extends Component {
@@ -7,17 +8,42 @@ export class Image extends Component {
   constructor(){
     super();
     this.setSelection = this.setSelection.bind(this);
+    this.selectImage = this.selectImage.bind(this);
   }
 
+  // Select all the text on focus for easy copy/pasting
   setSelection (e) {
     e.target.setSelectionRange(0, e.target.value.length);
+  }
+
+  selectImage (e) {
+    const { dispatch, image } = this.props;
+    e.preventDefault();
+
+    /**
+    Open modal with thumb inage, but with full image's dimensions
+    Then request full image via a preloader which jams it into redux as `modal.fullImage` when loaded
+    */
+
+    dispatch({
+      type: GIF_MODAL_REQUEST_IMAGE,
+      payload: {
+        thumbImage: {
+          url: image.images.fixed_width.url,
+          width: `${image.images.original.width}px`,
+          height: `${image.images.original.height}px`
+        },
+        requestedImage: image.images.original.url
+      }
+    });
   }
 
   render() {
     const { image } = this.props;
     return (
       <div>
-        <a href={image.url} className={styles.image}>
+
+        <a href="#" onClick={this.selectImage} className={styles.image}>
           <PreloadFadeInImage
             className={styles.img}
             imgSauce={image.images.fixed_width.url}
@@ -32,12 +58,14 @@ export class Image extends Component {
             defaultValue={`<img src="${image.images.original.url}" width="100%" />`}
           />
         </label>
+
       </div>
     );
   }
 }
 
 Image.propTypes = {
+  dispatch: PropTypes.func,
   image: PropTypes.shape({
     url: PropTypes.string.isRequired,
     images: PropTypes.shape({

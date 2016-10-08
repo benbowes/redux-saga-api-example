@@ -3,6 +3,7 @@ import expect from 'expect';
 import { fork } from 'redux-saga/effects';
 import { rootSaga } from './index';
 import { listenForDataRequests, listenForShowMoreRequests } from './apiSaga';
+import { listenForGifModalImageRequests } from './gifModalImagesSaga';
 
 describe(`Saga "index"`, () => {
 
@@ -12,7 +13,8 @@ describe(`Saga "index"`, () => {
     let result = generator.next();
     expect( result.value ).toEqual( [
       fork( listenForDataRequests ),
-      fork( listenForShowMoreRequests )
+      fork( listenForShowMoreRequests ),
+      fork( listenForGifModalImageRequests )
     ] );
   });
 

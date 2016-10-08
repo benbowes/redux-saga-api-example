@@ -4,6 +4,7 @@
 
 import { fork } from 'redux-saga/effects';
 import { listenForDataRequests, listenForShowMoreRequests } from './apiSaga';
+import { listenForGifModalImageRequests } from './gifModalImagesSaga';
 
 /*
 * @description This is our entry function.
@@ -12,6 +13,7 @@ import { listenForDataRequests, listenForShowMoreRequests } from './apiSaga';
 export function* rootSaga() {
   yield [
     fork(listenForDataRequests),
-    fork(listenForShowMoreRequests)
+    fork(listenForShowMoreRequests),
+    fork(listenForGifModalImageRequests)
   ]; // fork the sagas we want to init at application `firstload`
 }

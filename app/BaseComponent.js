@@ -2,6 +2,7 @@ import React, { PropTypes, Component } from 'react';
 import { connect } from 'react-redux';
 import { REQUEST_SEARCH_DATA } from 'constants/actionTypes';
 import { Image } from 'components/Image';
+import { GifModal } from 'components/GifModal';
 import { LoadMoreButton } from 'components/LoadMoreButton';
 import SearchInput from 'components/SearchInput';
 import getSearchTermQuery from 'helpers/getSearchTermQuery';
@@ -26,6 +27,9 @@ export class BaseComponent extends Component {
       dispatch,
       imageSearchResults,
       isLoading,
+      modalIsLoading,
+      thumbImage,
+      fullImage,
       searchTerm,
       showMorePossible,
       searchOffset,
@@ -34,45 +38,48 @@ export class BaseComponent extends Component {
 
     return (
       <div className={styles.imageListing}>
-      <h1 className={styles.h1}>
-        <span className={styles.heading}> </span>
-        {!isLoading
-          ? <span>
-              <span className={styles.heading}>You searched for</span>
-              <span className={styles.headingAlt}> {searchTerm}</span>
-            </span>
-          : <span>
-              <span className={styles.heading}>Looking for</span>
-              <span className={styles.headingAlt}> {searchTerm}...</span>
-            </span>
-        }
-      </h1>
 
-      <SearchInput dispatch={dispatch} />
+        <GifModal dispatch={dispatch} thumbImage={thumbImage} fullImage={fullImage} modalIsLoading={modalIsLoading} />
 
-      {imageSearchResults && imageSearchResults.length > 0 &&
-        <ol className={styles.imageListingItems}>
-          {imageSearchResults.map((imageData, index) =>
-            <li key={`${imageData.id}-${index}`} style={{backgroundColor: getCycledColor(index)}} className={styles.imageListingItem}>
-              <Image image={imageData} />
-            </li>
-          )
+        <h1 className={styles.h1}>
+          <span className={styles.heading}> </span>
+          {!isLoading
+            ? <span>
+                <span className={styles.heading}>You searched for</span>
+                <span className={styles.headingAlt}> {searchTerm}</span>
+              </span>
+            : <span>
+                <span className={styles.heading}>Looking for</span>
+                <span className={styles.headingAlt}> {searchTerm}...</span>
+              </span>
           }
-        </ol>
-      }
+        </h1>
 
-      {totalResultsCount < 1 &&
-        <p className={styles.emptyMessage}>No GIFs here :(</p>
-      }
+        <SearchInput dispatch={dispatch} />
 
-      {showMorePossible && totalResultsCount > 0 &&
-        <LoadMoreButton
-          dispatch={dispatch}
-          searchOffset={searchOffset}
-          searchTerm={searchTerm}
-          isLoading={isLoading}
-        />
-      }
+        {imageSearchResults && imageSearchResults.length > 0 &&
+          <ol className={styles.imageListingItems}>
+            {imageSearchResults.map((imageData, index) =>
+              <li key={`${imageData.id}-${index}`} style={{backgroundColor: getCycledColor(index)}} className={styles.imageListingItem}>
+                <Image image={imageData} dispatch={dispatch} />
+              </li>
+            )
+            }
+          </ol>
+        }
+
+        {totalResultsCount < 1 &&
+          <p className={styles.emptyMessage}>No GIFs here :(</p>
+        }
+
+        {showMorePossible && totalResultsCount > 0 &&
+          <LoadMoreButton
+            dispatch={dispatch}
+            searchOffset={searchOffset}
+            searchTerm={searchTerm}
+            isLoading={isLoading}
+          />
+        }
       </div>
     );
   }
@@ -82,6 +89,7 @@ BaseComponent.propTypes = {
   dispatch: PropTypes.func.isRequired,
   imageSearchResults: PropTypes.array,
   isLoading: PropTypes.bool,
+  fullImage: PropTypes.string,
   showMorePossible: PropTypes.bool,
   searchOffset: PropTypes.number,
   searchTerm: PropTypes.string,
@@ -93,6 +101,9 @@ export default connect((state) => {
     imageSearchResults: state.imageSearch.images,
     dispatch: state.dispatch,
     isLoading: state.imageSearch.isLoading,
+    fullImage: state.modal.fullImage,
+    thumbImage: state.modal.thumbImage,
+    modalIsLoading: state.modal.isLoading,
     showMorePossible: state.imageSearch.showMorePossible,
     searchOffset: state.imageSearch.searchOffset,
     searchTerm: state.imageSearch.searchTerm,

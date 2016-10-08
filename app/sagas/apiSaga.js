@@ -1,6 +1,6 @@
 import { takeEvery } from 'redux-saga';
 import { put, call } from 'redux-saga/effects';
-import { fetchWrapper } from './helpers/fetchWrapper';
+import { fetchJsonWrapper } from './helpers/fetchJsonWrapper';
 import {
   RECEIVE_SEARCH_DATA,
   REQUEST_SEARCH_DATA,
@@ -9,12 +9,12 @@ import {
 } from '../constants/actionTypes';
 
 /*
-* @description Passes the redux action's `url` through to fetchWrapper().
+* @description Passes the redux action's `url` through to fetchJsonWrapper().
 * Passes server error and failed action through via RECEIVE_SEARCH_DATA_FAILED action */
 
 export function* fetchData( action ) {
   try {
-    const receivedData = yield call( fetchWrapper, action.payload.url );
+    const receivedData = yield call( fetchJsonWrapper, action.payload.url );
 
     if ( receivedData.ok ) {
       yield put({

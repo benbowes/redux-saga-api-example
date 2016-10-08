@@ -28,7 +28,6 @@ describe('<Image />', () => {
 
     const imageContainer = ReactComponent.props.children[0];
     expect( imageContainer.type ).toEqual('a');
-    expect( imageContainer.props.href ).toEqual('http://some-giphy-permalink.url');
 
     const preloadFadeInImage = imageContainer.props.children;
     expect( preloadFadeInImage.type).toEqual(PreloadFadeInImage);

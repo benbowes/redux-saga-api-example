@@ -8,7 +8,7 @@ import fetch from 'isomorphic-fetch'; // Also provides a polyfill for fetch in I
 * If server errors - response is returned by a catch and appended with ok:false.
 * Otherwise if all good - response is returned by a then and appended with ok:true. */
 
-export const fetchWrapper = ( url, method = 'GET' ) => {
+export const fetchJsonWrapper = ( url, method = 'GET' ) => {
 
   return fetch( url, { method: method } )
 

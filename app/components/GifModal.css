@@ -1,0 +1,41 @@
+@keyframes imgLoaded {
+  0%   { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+.img{
+  width: 100%;
+  display: flex;
+  animation: imgLoaded 0.5s ease-in-out;
+}
+
+.imgLoading{
+  width: 100%;
+  display: flex;
+}
+
+.modal{
+  border-radius: 3px;
+  background: #392269;
+  overflow: scroll;
+  text-align: center;
+  height: 0;
+  max-height: 90%;
+  max-width: 80%;
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  z-index: 1;
+}
+
+.modal:FOCUS{
+  height: auto;
+  box-shadow: 0px 10px 100px 0px rgba(0,0,0,0.75);
+}
+
+.loadingSpinner{
+  composes: loadingSpinner from "../shared-css/shared.css";
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
