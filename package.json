@@ -44,7 +44,7 @@
     "react-redux": "4.4.x",
     "redux": "3.5.x",
 
-    "redux-saga": "0.10.x",
+    "redux-saga": "0.12.x",
 
     "postcss-loader": "0.13.x",
     "autoprefixer": "6.4.x",
