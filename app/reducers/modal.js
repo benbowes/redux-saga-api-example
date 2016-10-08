@@ -23,8 +23,7 @@ export const modal = ( state = initialState, action = {} ) => {
   case REQUEST_SEARCH_DATA:
   case REQUEST_SHOW_MORE:
     return {
-      ...state,
-      fullImage: ''
+      ...initialState
     };
 
   case GIF_MODAL_REQUEST_IMAGE:
