@@ -1,5 +1,5 @@
 
-# A Giphy API with React, Redux and Redux Saga example
+# A Giphy API with React, Redux, Redux Saga and CSS Modules example
 
 ![Build status](https://api.travis-ci.org/benbowes/redux-saga-api-example.svg)
 
@@ -47,6 +47,6 @@ npm run
 ```
 
 ### Todo
-- Copy/paste embed code
+- --Copy/paste embed code--
 - Add React Router
 - Add Infinite scroll
