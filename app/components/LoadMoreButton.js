@@ -8,12 +8,12 @@ const LoadMoreButton = ({ dispatch, searchTerm, searchOffset, isLoading }) => {
     <div className={styles.buttonContainer}>
       <button
         className={isLoading ? styles.buttonDisabled : styles.button}
-        onClick={() => {
-          dispatch({
-            type: REQUEST_SHOW_MORE,
-            payload: { searchOffset, searchTerm }
-          });
-        }} disabled={isLoading}>
+        onClick={() => dispatch({
+          type: REQUEST_SHOW_MORE,
+          payload: { searchOffset, searchTerm }
+        })}
+        disabled={isLoading}
+      >
         {!isLoading
           ? <span>More results for &lsquo;{searchTerm}&rsquo;</span>
           : <span>Requesting GIFs...</span>

@@ -4,12 +4,12 @@ import * as styles from './Heading.css';
 const Heading = ({ searchTerm, isLoading }) => {
   return (
     <h1 className={styles.h1}>
-      <span className={styles.heading}> </span>
       {!isLoading
         ? <span>
             <span className={styles.heading}>You searched for</span>
             <span className={styles.headingAlt}> {searchTerm}</span>
           </span>
+
         : <span>
             <span className={styles.heading}>Looking for</span>
             <span className={styles.headingAlt}> {searchTerm}...</span>

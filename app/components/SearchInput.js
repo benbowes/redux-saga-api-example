@@ -5,9 +5,9 @@ import * as styles from './SearchInput.css';
 
 class SearchInput extends Component {
 
-  addItemHandler( event ) {
+  addItemHandler( e ) {
+    e.preventDefault();
     const { dispatch } = this.props;
-    event.preventDefault();
 
     if(this.refs.searchGiphyInput.value !== ''){
       dispatch({

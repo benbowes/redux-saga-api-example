@@ -20,8 +20,10 @@ export default class PreloadFadeInImage extends Component {
     }, 10);
   }
 
+  /**
+  Cleanup before removing from the DOM */
+
   componentWillUnmount() {
-    // cleanup before removing from the DOM
     this.preloadImg.onload = undefined;
     this.preloadImg = undefined;
     clearTimeout(this.timeout);

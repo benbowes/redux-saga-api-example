@@ -10,18 +10,8 @@ import * as styles from './BaseComponent.css';
 export class BaseComponent extends Component {
 
   render() {
-    const {
-      dispatch,
-      imageSearchResults,
-      isLoading,
-      modalIsLoading,
-      thumbImage,
-      fullImage,
-      searchTerm,
-      showMorePossible,
-      searchOffset,
-      totalResultsCount
-    } = this.props;
+    const { dispatch, imageSearchResults, isLoading, modalIsLoading,thumbImage, 
+      fullImage, searchTerm, showMorePossible, searchOffset, totalResultsCount } = this.props;
 
     return (
       <div className={styles.imageListing}>
@@ -32,16 +22,16 @@ export class BaseComponent extends Component {
         <SearchResults dispatch={dispatch} imageSearchResults={imageSearchResults} />
 
         {totalResultsCount < 1 &&
-          <p className={styles.emptyMessage}>No GIFs here :(</p>
+        <p className={styles.emptyMessage}>No GIFs here :(</p>
         }
 
         {showMorePossible && totalResultsCount > 0 &&
-          <LoadMoreButton
-            dispatch={dispatch}
-            searchOffset={searchOffset}
-            searchTerm={searchTerm}
-            isLoading={isLoading}
-          />
+        <LoadMoreButton
+          dispatch={dispatch}
+          searchOffset={searchOffset}
+          searchTerm={searchTerm}
+          isLoading={isLoading}
+        />
         }
 
         <a href="https://github.com/benbowes/redux-saga-api-example/" target="_blank" title="View on github">

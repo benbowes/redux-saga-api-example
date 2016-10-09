@@ -5,21 +5,16 @@ import * as styles from './SearchResults.css';
 
 const SearchResults = ({ imageSearchResults, dispatch }) => {
   return (
-    <div>
-      {imageSearchResults && imageSearchResults.length > 0 &&
-      <ol className={styles.imageListingItems}>
-        {imageSearchResults.map((imageData, index) =>
-          <li
-            key={`${imageData.id}-${index}`}
-            style={{backgroundColor: getCycledColor(index)}}
-            className={styles.imageListingItem}
-          >
-            <Image image={imageData} dispatch={dispatch} />
-          </li>
-        )}
-      </ol>
-      }
-    </div>
+    <ol className={styles.imageListingItems}>
+      {imageSearchResults.map((imageData, index) =>
+        <li key={`${imageData.id}-${index}`}
+          style={{backgroundColor: getCycledColor(index)}}
+          className={styles.imageListingItem}
+        >
+          <Image image={imageData} dispatch={dispatch} />
+        </li>
+      )}
+    </ol>
   );
 };
 
