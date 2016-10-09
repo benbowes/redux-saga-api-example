@@ -1,16 +1,16 @@
 import React, { PropTypes, Component } from 'react';
 import { connect } from 'react-redux';
-import GifModal from 'components/GifModal';
-import LoadMoreButton from 'components/LoadMoreButton';
-import Heading from 'components/Heading';
-import SearchInput from 'components/SearchInput';
-import SearchResults from 'components/SearchResults';
+import GifModal from './components/GifModal';
+import LoadMoreButton from './components/LoadMoreButton';
+import Heading from './components/Heading';
+import SearchInput from './components/SearchInput';
+import SearchResults from './components/SearchResults';
 import * as styles from './BaseComponent.css';
 
 export class BaseComponent extends Component {
 
   render() {
-    const { dispatch, imageSearchResults, isLoading, modalIsLoading,thumbImage, 
+    const { dispatch, imageSearchResults, isLoading, modalIsLoading,thumbImage,
       fullImage, searchTerm, showMorePossible, searchOffset, totalResultsCount } = this.props;
 
     return (

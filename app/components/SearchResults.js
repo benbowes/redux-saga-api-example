@@ -1,6 +1,6 @@
 import React, { PropTypes } from 'react';
-import Image from 'components/Image';
-import getCycledColor from 'helpers/getCycledColor';
+import Image from './Image';
+import getCycledColor from '../helpers/getCycledColor';
 import * as styles from './SearchResults.css';
 
 const SearchResults = ({ imageSearchResults, dispatch }) => {
