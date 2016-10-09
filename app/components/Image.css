@@ -21,7 +21,8 @@
 }
 
 .githubEmbedLabel{
-  margin: 10px 0;
+  width: 100%;
+  margin: 10px 0 5px;
   display: inline-block;
   color: #fff;
   font-size: 12px;
@@ -31,7 +32,7 @@
   width: 100%;
   margin: 0;
   border-radius: 3px;
-  padding: 4px;
+  padding: 8px;
   border: 0;
   color: #673ab7;
   background: rgba(255,255,255,0.2);
