@@ -8,6 +8,13 @@
 ## Demo link
  [https://benbowes.github.io/redux-saga-api-example/](https://benbowes.github.io/redux-saga-api-example/)
 
+#### Overview
+
+Provides an easy way to copy/paste Github GIF embed code to use in pull requests.
+
+Search your favourite term, then click on a thumb to see a high res version. Initially a low res Gif gets stretched out to full-size whilst a background task preloads a high-res version of the Gif.
+
+Clicking on the embed code will auto-select the whole string for easy copy/pasting.
 
 #### 1) Getting started.
 
