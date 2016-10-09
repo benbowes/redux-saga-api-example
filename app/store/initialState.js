@@ -4,7 +4,7 @@
 
 export const initialState = {
   imageSearch: {
-    searchTerm: 'Michael Bolton',
+    searchTerm: 'Gif Driven Development',
     searchOffset: 0
   }
 };

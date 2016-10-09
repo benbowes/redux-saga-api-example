@@ -1,15 +1,18 @@
 .githubLink{
+  color: rgba(255,255,255,0.5);
+  display: flex;
+  align-items: center;
   position: absolute;
-  top: 20px;
-  right: 20px;
-  width: 16px;
-  opacity: 1;
-  transition: opacity 0.3s ease-in-out;
+  top: 25px;
+  right: 30px;
+  font-size: 12px;
+  text-decoration: none;
+  transition: all 0.3s;
 }
 
 .githubLink:HOVER{
-  transition: opacity 0s;
-  opacity: 0.5;
+  transition: all 0s;
+  color: rgba(255,255,255,1);
 }
 
 .emptyMessage{

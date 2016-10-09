@@ -1,24 +1,26 @@
 .image {
   overflow: hidden;
-  transition: opacity 0.3s ease-in-out;
-  display: flex;
+  display: block;
+  transition: all 0.3s ease-in-out;
+  background: rgba(0, 0, 0, 1);
+  border-radius: 3px;
 }
 
 .image:HOVER{
-  transition: opacity 0s ease-in-out;
-  opacity: 0.5;
+  transition: all 0s ease-in-out;
+  background: rgba(0, 0, 0, 0.8);
 }
 
 .img{
   max-width: 100%;
   display: flex;
-  width: 200px;
-  height: 200px;
+  width: 210px;
+  height: 210px;
   object-fit: contain;
 }
 
 .githubEmbedLabel{
-  margin: 10px 0 0 0;
+  margin: 10px 0;
   display: inline-block;
   color: #fff;
   font-size: 12px;
@@ -27,8 +29,8 @@
 .githubEmbedInput{
   width: 100%;
   margin: 0;
-  border: 0;
   border-radius: 3px;
   padding: 4px;
-  background: #d6effa;
+  border: 0;
+  background: rgba(103, 58, 183, 0.2);
 }

@@ -3,6 +3,7 @@ import expect from 'expect';
 import React from 'react';
 import ReactTestUtils from 'react-addons-test-utils';
 import Image from './Image';
+import PreloadFadeInImage from './PreloadFadeInImage';
 
 const image = {
   url: 'http://some-giphy-permalink.url',
@@ -29,8 +30,8 @@ describe('<Image />', () => {
     expect( imageContainer.type ).toEqual('a');
 
     const preloadFadeInImage = imageContainer.props.children;
-    expect( preloadFadeInImage.type).toEqual( 'img' );
-    expect( preloadFadeInImage.props.src ).toEqual('http://some-image.url');
+    expect( preloadFadeInImage.type).toEqual(PreloadFadeInImage);
+    expect( preloadFadeInImage.props.imgSauce ).toEqual('http://some-image.url');
 
     const githubEmbedInput = ReactComponent.props.children[1].props.children[1];
     expect( githubEmbedInput.type).toEqual('input');

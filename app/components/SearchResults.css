@@ -8,13 +8,13 @@
 }
 
 .imageListingItem{
-  border-radius: 3px 30px;
+  border-radius: 3px 10px 3px 3px;
   display: flex;
-  align-items: center;
-  padding: 20px;
+  align-items: flex-start;
   margin: 0 8px 8px 0;
-  height: 290px;
-  width: 240px;
+  padding: 10px;
+  height: 280px;
+  width: 230px;
   overflow: hidden;
   background: #fff;
 }

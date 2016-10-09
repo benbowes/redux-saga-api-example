@@ -1,4 +1,5 @@
 import React, { Component, PropTypes } from 'react';
+import PreloadFadeInImage from './PreloadFadeInImage';
 import { GIF_MODAL_REQUEST_IMAGE } from '../constants/actionTypes';
 import styles from './Image.css';
 
@@ -44,10 +45,9 @@ export default class Image extends Component {
       <div>
 
         <a href="#" onClick={this.selectImage} className={styles.image}>
-          <img
+          <PreloadFadeInImage
             className={styles.img}
-            src={image.images.fixed_width.url}
-            alt="Gif"
+            imgSauce={image.images.fixed_width.url}
           />
         </a>
 
