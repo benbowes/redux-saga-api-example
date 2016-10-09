@@ -20,7 +20,7 @@ Clicking on the embed code will auto-select the whole string for easy copy/pasti
 
 1. `npm install`
 2. `npm start`
-3. Then open [http://localhost:3001/webpack-dev-server/](http://localhost:3005/webpack-dev-server/)
+3. Then open [http://localhost:3005/webpack-dev-server/](http://localhost:3005/webpack-dev-server/)
 
 #### Lint the code (with eslint)
 ```
