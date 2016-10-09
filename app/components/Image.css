@@ -2,13 +2,14 @@
   overflow: hidden;
   display: block;
   transition: all 0.3s ease-in-out;
-  background: rgba(0, 0, 0, 1);
+  background: rgba(0, 0, 0, 0.8);
   border-radius: 3px;
 }
 
-.image:HOVER{
+.image:HOVER,
+.image:FOCUS{
   transition: all 0s ease-in-out;
-  background: rgba(0, 0, 0, 0.8);
+  background: rgba(0, 0, 0, 0.5);
 }
 
 .img{
@@ -32,5 +33,6 @@
   border-radius: 3px;
   padding: 4px;
   border: 0;
-  background: rgba(103, 58, 183, 0.2);
+  color: #333;
+  background: rgba(0, 0, 0, 0.1);
 }

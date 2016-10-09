@@ -18,8 +18,7 @@ body {
 
 .root{
   margin: 10px;
-  background: darkslateblue;
-  background: linear-gradient(to right, #483d8b 0%,#84526e 100%);
+  background: #7557b3;
   padding: 30px;
   min-height: 100%;
 }

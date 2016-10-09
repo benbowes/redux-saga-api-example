@@ -8,7 +8,6 @@
 }
 
 .imageListingItem{
-  border-radius: 3px 10px 3px 3px;
   display: flex;
   align-items: flex-start;
   margin: 0 8px 8px 0;
