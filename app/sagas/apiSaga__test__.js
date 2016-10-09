@@ -45,10 +45,6 @@ describe(`Saga "apiSaga"`, () => {
 
     expect( result.value ).toEqual( call(fetchJsonWrapper, '//api.giphy.com/v1/gifs/search?q=Some+search+term&offset=0&api_key=dc6zaTOxFJmzC') );
 
-    expect( result.value.CALL.fn ).toEqual( fetchJsonWrapper );
-
-    expect( result.value.CALL.args ).toEqual( '//api.giphy.com/v1/gifs/search?q=Some+search+term&offset=0&api_key=dc6zaTOxFJmzC' );
-
     result = generator.next({ 'some': 'data', 'ok': true });
 
     expect( result.value ).toEqual(
