@@ -21,10 +21,7 @@ export function* fetchData( action ) {
     if ( receivedData.ok ) {
       yield put({
         type: actionTypes.RECEIVE_SEARCH_DATA,
-        payload: {
-          receivedData: receivedData,
-          searchTerm: action.payload.searchTerm
-        }
+        payload: { receivedData }
       });
     } else {
       throw receivedData;

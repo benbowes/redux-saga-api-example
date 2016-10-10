@@ -33,12 +33,9 @@ describe('<Image />', () => {
     expect( preloadFadeInImage.type).toEqual(PreloadFadeInImage);
     expect( preloadFadeInImage.props.imgSauce ).toEqual('http://some-image.url');
 
-    const githubEmbedInput = ReactComponent.props.children[1].props.children[1];
+    const githubEmbedInput = ReactComponent.props.children[1].props.children;
     expect( githubEmbedInput.type).toEqual('input');
     expect( githubEmbedInput.props.defaultValue).toEqual('<img src="http://some-image.url/giphy.gif" width="100%" />');
-
-    const githubEmbedLabel = ReactComponent.props.children[1].props.children[0];
-    expect( githubEmbedLabel ).toEqual('Github embed code');
   });
 
   xit('Should select all input text when input receives focus', () => {

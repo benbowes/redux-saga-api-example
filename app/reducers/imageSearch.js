@@ -41,7 +41,8 @@ export const imageSearch = ( state = initialState, action = {} ) => {
   case REQUEST_SHOW_MORE:
     return {
       ...state,
-      isLoading: true
+      isLoading: true,
+      searchTerm: action.payload.searchTerm
     };
 
   case RECEIVE_SEARCH_DATA:
@@ -50,7 +51,6 @@ export const imageSearch = ( state = initialState, action = {} ) => {
       isLoading: false,
       messages: undefined,
       showMorePossible: getShowMorePossible( state.searchOffset, action.payload.receivedData ),
-      searchTerm: action.payload.searchTerm,
       images: [...state.images, ...action.payload.receivedData.data],
       searchOffset: getSearchOffset( state.searchOffset, action.payload.receivedData ),
       totalResultsCount: action.payload.receivedData.pagination.total_count

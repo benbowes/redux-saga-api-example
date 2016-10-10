@@ -18,7 +18,8 @@ describe(`Reducers "modal"`, () => {
         url: 'http://someThumb.url',
         width: '300px',
         height: '100px'
-      }
+      },
+      giphyURL: 'http://some.giphy.url'
     };
     let result = modal(state, {type: actionTypes.REQUEST_SEARCH_DATA});
     expect(result).toEqual(initialState);
@@ -39,7 +40,8 @@ describe(`Reducers "modal"`, () => {
           url: 'http://someThumb.url',
           width: '300px',
           height: '100px'
-        }
+        },
+        giphyURL: 'http://some.giphy.url'
       }
     });
     expect(result).toEqual({
@@ -51,7 +53,8 @@ describe(`Reducers "modal"`, () => {
         url: 'http://someThumb.url',
         width: '300px',
         height: '100px'
-      }
+      },
+      giphyURL: 'http://some.giphy.url'
     });
   });
 

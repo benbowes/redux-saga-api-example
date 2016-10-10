@@ -34,7 +34,8 @@ export default class Image extends Component {
           url: image.images.fixed_width.url,
           width: `${image.images.original.width}px`,
           height: `${image.images.original.height}px`
-        }
+        },
+        giphyURL: image.url
       }
     });
   }
@@ -44,7 +45,7 @@ export default class Image extends Component {
     return (
       <div>
 
-        <a href="#" onClick={this.selectImage} className={styles.image}>
+        <a onClick={this.selectImage} className={styles.image}>
           <PreloadFadeInImage
             className={styles.img}
             imgSauce={image.images.fixed_width.url}
@@ -52,7 +53,6 @@ export default class Image extends Component {
         </a>
 
         <label className={styles.githubEmbedLabel}>
-          Github embed code
           <input
             onFocus={this.setSelection}
             className={styles.githubEmbedInput}

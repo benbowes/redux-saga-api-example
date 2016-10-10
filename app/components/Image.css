@@ -3,7 +3,6 @@
   display: block;
   transition: all 0.3s ease-in-out;
   background: rgba(0, 0, 0, 0.8);
-  border-radius: 3px;
 }
 
 .image:HOVER,
@@ -18,11 +17,12 @@
   width: 210px;
   height: 210px;
   object-fit: contain;
+  cursor: pointer;
 }
 
 .githubEmbedLabel{
   width: 100%;
-  margin: 10px 0 5px;
+  margin: 10px 0 0;
   display: inline-block;
   color: #fff;
   font-size: 12px;
@@ -31,8 +31,7 @@
 .githubEmbedInput{
   width: 100%;
   margin: 0;
-  border-radius: 3px;
-  padding: 8px;
+  padding: 14px;
   border: 0;
   color: #673ab7;
   background: rgba(255,255,255,0.2);

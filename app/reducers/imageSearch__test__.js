@@ -74,7 +74,6 @@ describe(`Reducers "imageSearch"`, () => {
     const result = imageSearch(initialState, {
       type: actionTypes.RECEIVE_SEARCH_DATA,
       payload: {
-        searchTerm: 'Some Search Query',
         receivedData: {
           data: [{
             images: {
@@ -104,7 +103,6 @@ describe(`Reducers "imageSearch"`, () => {
           fixed_width: { url: 'http://media3.giphy.com/media/123456/200w.gif' }
         }
       }],
-      searchTerm: 'Some Search Query',
       showMorePossible: true,
       searchOffset: 25,
       totalResultsCount: 3401

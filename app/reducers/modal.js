@@ -13,7 +13,8 @@ export const initialState = {
     height: '0px'
   },
   isLoading: false,
-  requestedImage: ''
+  requestedImage: '',
+  giphyURL: ''
 };
 
 export const modal = ( state = initialState, action = {} ) => {
@@ -36,7 +37,8 @@ export const modal = ( state = initialState, action = {} ) => {
         url: action.payload.thumbImage.url,
         width: action.payload.thumbImage.width,
         height: action.payload.thumbImage.height
-      }
+      },
+      giphyURL: action.payload.giphyURL
     };
 
   case GIF_MODAL_IMAGE_LOADED:

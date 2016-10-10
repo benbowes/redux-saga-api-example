@@ -54,8 +54,7 @@ describe(`Saga "apiSaga"`, () => {
           receivedData: {
             'some': 'data',
             'ok': true
-          },
-          searchTerm: 'Some search term'
+          }
         }
       })
     );

@@ -1,9 +1,10 @@
 import React, { Component, PropTypes } from 'react';
 import ReactDOM from 'react-dom';
+import { connect } from 'react-redux';
 import { GIF_MODAL_CANCEL_REQUEST_IMAGE } from '../constants/actionTypes';
 import styles from './GifModal.css';
 
-export default class GifModal extends Component {
+export class GifModal extends Component {
 
   constructor() {
     super();
@@ -14,8 +15,8 @@ export default class GifModal extends Component {
   Focus when props.fullImage is full or props.modalIsLoading is true */
 
   componentDidUpdate() {
-    const { fullImage, modalIsLoading } = this.props;
-    if (fullImage !== '' || modalIsLoading) this.gifModalDOM.focus();
+    const { fullImage, isLoading } = this.props;
+    if (fullImage !== '' || isLoading) this.gifModalDOM.focus();
   }
 
   componentDidMount() {
@@ -48,11 +49,11 @@ export default class GifModal extends Component {
   Then when loaded, update the GifModal with the full res image */
 
   render () {
-    const { fullImage, modalIsLoading, thumbImage } = this.props;
+    const { fullImage, isLoading, thumbImage, giphyURL } = this.props;
 
     return (
-      <div className={styles.modal} tabIndex="-1" ref="gifModal">
-        {modalIsLoading
+      <a href={giphyURL} target="_blank" title="View on Giphy" className={styles.modal} tabIndex="-1" ref="gifModal">
+        {isLoading
 
           ? <div>
               <div className={styles.loadingSpinner}></div>
@@ -66,7 +67,7 @@ export default class GifModal extends Component {
 
           : <img className={styles.img} src={fullImage} alt="Full Image" />
         }
-      </div>
+      </a>
     );
   }
 }
@@ -79,5 +80,16 @@ GifModal.propTypes = {
     height: PropTypes.string.isRequired
   }).isRequired,
   fullImage: PropTypes.string.isRequired,
-  modalIsLoading: PropTypes.bool.isRequired
+  isLoading: PropTypes.bool.isRequired,
+  giphyURL: PropTypes.string.isRequired
 };
+
+export default connect((state) => {
+  return {
+    dispatch: state.modal.dispatch,
+    fullImage: state.modal.fullImage,
+    giphyURL: state.modal.giphyURL,
+    isLoading: state.modal.isLoading,
+    thumbImage: state.modal.thumbImage
+  };
+})(GifModal);

@@ -10,13 +10,12 @@ import * as styles from './BaseComponent.css';
 export class BaseComponent extends Component {
 
   render() {
-    const { dispatch, imageSearchResults, isLoading, modalIsLoading,thumbImage,
-      fullImage, searchTerm, showMorePossible, searchOffset, totalResultsCount } = this.props;
+    const { dispatch, imageSearchResults, isLoading, searchTerm, showMorePossible, searchOffset, totalResultsCount } = this.props;
 
     return (
       <div className={styles.imageListing}>
 
-        <GifModal dispatch={dispatch} thumbImage={thumbImage} fullImage={fullImage} modalIsLoading={modalIsLoading} />
+        <GifModal />
         <Heading isLoading={isLoading} searchTerm={searchTerm} />
         <SearchInput dispatch={dispatch} />
         <SearchResults dispatch={dispatch} imageSearchResults={imageSearchResults} />
