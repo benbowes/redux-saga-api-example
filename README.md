@@ -10,11 +10,11 @@
 
 #### Overview
 
-Provides an easy way to copy/paste Github GIF embed code to use in pull requests.
+This Giphy client provides an easy way to copy/paste Github GIF embed code for use in pull requests. Aiding in easy GDD (Gif Driven Development). It's an excellent way to share the love umoungst your friendly crew.
 
-Search your favourite term, then click on a thumb to see a high res version. Initially a low res Gif gets stretched out to full-size whilst a background task preloads a high-res version of the Gif.
+Search your favourite term, then click on your favoured Gif's input text box to select your Github image embed code. You can copy/paste this into your pull request. 
 
-Clicking on the embed code will auto-select the whole string for easy copy/pasting.
+Clicking on a thumb will reveal a Gif viewer modal. Initially a low-res Gif gets loaded into the modal but has the full-size Gif's final dimensions. In the background, the modal preloads a high-res version of the Gif which will replace the low-res Gif.
 
 #### 1) Getting started.
 
