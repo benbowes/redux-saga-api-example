@@ -13,7 +13,6 @@ export default class Image extends Component {
 
   /**
   Select all the text on focus for easy copy/pasting */
-
   setSelection (e) {
     e.target.setSelectionRange(0, e.target.value.length);
   }
@@ -25,7 +24,6 @@ export default class Image extends Component {
     /**
     Open modal with thumb inage at full image's dimensions
     Then request full image via a preloader which jams it's url into redux as `modal.fullImage` when loaded */
-
     dispatch({
       type: GIF_MODAL_REQUEST_IMAGE,
       payload: {
@@ -44,14 +42,12 @@ export default class Image extends Component {
     const { image } = this.props;
     return (
       <div>
-
         <a onClick={this.selectImage} className={styles.image}>
           <PreloadFadeInImage
             className={styles.img}
             imgSauce={image.images.fixed_width.url}
           />
         </a>
-
         <label className={styles.githubEmbedLabel}>
           <input
             onFocus={this.setSelection}
@@ -60,7 +56,6 @@ export default class Image extends Component {
             defaultValue={`<img src="${image.images.original.url}" width="100%" />`}
           />
         </label>
-
       </div>
     );
   }

@@ -5,7 +5,6 @@ import { GIF_MODAL_CANCEL_REQUEST_IMAGE } from '../constants/actionTypes';
 import styles from './GifModal.css';
 
 export class GifModal extends Component {
-
   constructor() {
     super();
     this.gifModalDOM = undefined;
@@ -13,7 +12,6 @@ export class GifModal extends Component {
 
   /**
   Focus when props.fullImage is full or props.modalIsLoading is true */
-
   componentDidUpdate() {
     const { fullImage, isLoading } = this.props;
     if (fullImage !== '' || isLoading) this.gifModalDOM.focus();
@@ -26,10 +24,8 @@ export class GifModal extends Component {
 
   /**
   Cacnel full image download when ESC key pressed or GifModal loses focus */
-
   createModalOnBlurListeners() {
     const { dispatch } = this.props;
-
     this.gifModalDOM.addEventListener('keydown', (e) => {
       e = e || window.event;
       if (e.keyCode == 27) {
@@ -37,7 +33,6 @@ export class GifModal extends Component {
         dispatch({ type: GIF_MODAL_CANCEL_REQUEST_IMAGE });
       }
     });
-
     this.gifModalDOM.addEventListener('blur', () => {
       dispatch({ type: GIF_MODAL_CANCEL_REQUEST_IMAGE });
     });
@@ -47,14 +42,12 @@ export class GifModal extends Component {
   When GifModal is loading, iniially show a preloader and the thumb image stretched
   out to full res image's dimensions.
   Then when loaded, update the GifModal with the full res image */
-
   render () {
     const { fullImage, isLoading, thumbImage, giphyURL } = this.props;
 
     return (
       <a href={giphyURL} target="_blank" title="View on Giphy" className={styles.modal} tabIndex="-1" ref="gifModal">
         {isLoading
-
           ? <div>
               <div className={styles.loadingSpinner}></div>
               <img
@@ -64,7 +57,6 @@ export class GifModal extends Component {
                 style={{ width: thumbImage.width, height: thumbImage.height }}
               />
             </div>
-
           : <img className={styles.img} src={fullImage} alt="Full Image" />
         }
       </a>

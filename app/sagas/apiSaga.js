@@ -7,7 +7,6 @@ import * as actionTypes from '../constants/actionTypes';
 /*
 * @description Passes the redux action's `url` through to fetchJsonWrapper().
 * Passes server error and failed action through via RECEIVE_SEARCH_DATA_FAILED action */
-
 export function* fetchData( action ) {
 
   const { searchOffset, searchTerm } = action.payload;
@@ -17,7 +16,6 @@ export function* fetchData( action ) {
 
   try {
     const receivedData = yield call( fetchJsonWrapper, searchURL );
-
     if ( receivedData.ok ) {
       yield put({
         type: actionTypes.RECEIVE_SEARCH_DATA,
@@ -26,21 +24,17 @@ export function* fetchData( action ) {
     } else {
       throw receivedData;
     }
-
   } catch(err) {
-
     yield put({
       type: actionTypes.RECEIVE_SEARCH_DATA_FAILED,
       payload: { error: err, failedAction: action }
     });
-    //console.log( 'An error happenned :/', err );
   }
 }
 
 /*
 * @description Listens for when an actionTypes.REQUEST_SEARCH_DATA action is fired
 * It calls fetchData() everytime it does- passing in the redux action payload with it*/
-
 export function* listenForDataRequests() {
   yield* takeEvery( actionTypes.REQUEST_SEARCH_DATA, fetchData );
 }

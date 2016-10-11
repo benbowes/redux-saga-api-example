@@ -8,7 +8,6 @@ class SearchInput extends Component {
   addItemHandler( e ) {
     e.preventDefault();
     const { dispatch } = this.props;
-
     if(this.refs.searchGiphyInput.value !== ''){
       dispatch({
         type: REQUEST_SEARCH_DATA,

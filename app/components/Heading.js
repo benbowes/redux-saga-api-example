@@ -9,7 +9,6 @@ const Heading = ({ searchTerm, isLoading }) => {
             <span className={styles.heading}>You searched for</span>
             <span className={styles.headingAlt}> {searchTerm}</span>
           </span>
-
         : <span>
             <span className={styles.heading}>Looking for</span>
             <span className={styles.headingAlt}> {searchTerm}...</span>

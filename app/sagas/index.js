@@ -8,7 +8,6 @@ import { listenForGifModalImageRequests } from './gifModalImagesSaga';
 import { REQUEST_SEARCH_DATA } from '../constants/actionTypes';
 
 export function* bootstrap() {
-
   // Grab state from Redux
   const searchOffset = yield select( state => state.imageSearch.searchOffset );
   const searchTerm = yield select( state => state.imageSearch.searchTerm );
@@ -20,7 +19,6 @@ export function* bootstrap() {
 /*
 * @description This is our entry function.
 * It's fired in store/configureStore after middleware is applied */
-
 export function* rootSaga() {
   yield [
     fork(listenForDataRequests),

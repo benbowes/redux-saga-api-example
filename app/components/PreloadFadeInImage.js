@@ -22,7 +22,6 @@ export default class PreloadFadeInImage extends Component {
 
   /**
   Cleanup before removing from the DOM */
-
   componentWillUnmount() {
     this.preloadImg.onload = undefined;
     this.preloadImg = undefined;
@@ -39,7 +38,6 @@ export default class PreloadFadeInImage extends Component {
         style={this.state.isLoading ? isLoadingStyle: isLoadedStyle}
       />
     );
-
   }
 }
 

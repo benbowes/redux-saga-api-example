@@ -21,7 +21,6 @@ const LoadMoreButton = ({ dispatch, searchTerm, searchOffset, isLoading }) => {
       </button>
     </div>
   );
-
 };
 
 LoadMoreButton.propTypes = {
