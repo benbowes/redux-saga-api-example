@@ -3,7 +3,7 @@ import expect from 'expect';
 import { take, call, put } from 'redux-saga/effects';
 import * as actionTypes from '../constants/actionTypes';
 import { fetchData, listenForDataRequests } from './apiSaga';
-import { fetchJsonWrapper } from './helpers/fetchJsonWrapper';
+import { fetchJsonWrapper } from './asyncWrappers/fetchJson';
 
 describe(`Saga "apiSaga"`, () => {
 
@@ -12,18 +12,14 @@ describe(`Saga "apiSaga"`, () => {
     const generator = listenForDataRequests();
 
     let result = generator.next();
-
     expect( result.value ).toEqual( take( actionTypes.REQUEST_SEARCH_DATA ) );
 
     result = generator.next();
-
     expect( result.value.FORK.fn ).toEqual( fetchData );
 
     result = generator.next();
-
     // Cycles back to first step in saga
     expect( result.value ).toEqual( take( actionTypes.REQUEST_SEARCH_DATA ) );
-
     // And is still active
     expect( result.done ).toEqual( false );
 
@@ -38,15 +34,12 @@ describe(`Saga "apiSaga"`, () => {
         searchTerm: 'Some search term'
       }
     };
-
     const generator = fetchData(action);
 
     let result = generator.next();
-
     expect( result.value ).toEqual( call(fetchJsonWrapper, '//api.giphy.com/v1/gifs/search?q=Some+search+term&offset=0&api_key=dc6zaTOxFJmzC') );
 
     result = generator.next({ 'some': 'data', 'ok': true });
-
     expect( result.value ).toEqual(
       put({
         type: actionTypes.RECEIVE_SEARCH_DATA,
@@ -60,9 +53,7 @@ describe(`Saga "apiSaga"`, () => {
     );
 
     result = generator.next();
-
     expect( result.done ).toEqual( true );
-
   });
 
   it(`It'll pass the error and failed action when an api call fails...`, () => {
@@ -75,11 +66,9 @@ describe(`Saga "apiSaga"`, () => {
     };
 
     const generator = fetchData( action );
-
     generator.next();
 
     let result = generator.throw({ error: 'File not found' }).value;
-
     expect( result.PUT.action.type )
       .toEqual( actionTypes.RECEIVE_SEARCH_DATA_FAILED );
 
@@ -96,9 +85,6 @@ describe(`Saga "apiSaga"`, () => {
       });
 
     result = generator.next();
-
     expect( result.done ).toEqual( true );
-
   });
-
 });

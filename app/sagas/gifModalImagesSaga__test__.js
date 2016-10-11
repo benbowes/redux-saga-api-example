@@ -4,7 +4,7 @@ import { createMockTask } from 'redux-saga/utils';
 import { put, call, take, fork, cancel } from 'redux-saga/effects';
 import * as actionTypes from '../constants/actionTypes';
 import { fetchImage, requestImage, listenForGifModalImageRequests } from './gifModalImagesSaga';
-import { fetchImageWrapper } from './helpers/fetchImageWrapper';
+import { fetchImageWrapper } from './asyncWrappers/fetchImage';
 
 describe(`Saga "gifModalImagesSaga"`, () => {
 

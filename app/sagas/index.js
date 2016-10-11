@@ -1,7 +1,6 @@
 /*
 * @requires Redux Saga needs to be polyfilled by npm module `babel-polyfill`
 * see app/index.js */
-
 import { call, fork, put, select } from 'redux-saga/effects';
 import { listenForDataRequests, listenForShowMoreRequests } from './apiSaga';
 import { listenForGifModalImageRequests } from './gifModalImagesSaga';

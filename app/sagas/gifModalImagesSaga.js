@@ -1,6 +1,6 @@
 import { takeEvery } from 'redux-saga';
 import { put, call, take, fork, cancel } from 'redux-saga/effects';
-import { fetchImageWrapper } from './helpers/fetchImageWrapper';
+import { fetchImageWrapper } from './asyncWrappers/fetchImage';
 import * as actionTypes from '../constants/actionTypes';
 
 export function* requestImage( action ) {

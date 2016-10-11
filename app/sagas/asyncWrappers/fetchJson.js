@@ -19,15 +19,10 @@ export const fetchJsonWrapper = ( url, method = 'GET' ) => {
       }
     })
     .then( response => {
-      return {
-        ...response,
-        ...{ ok: true }
-      };
+      return { ...response, ...{ ok: true } };
     })
     .catch( response => {
-      return {
-        ...response,
-        ...{ ok: false }
-      };
+      return { ...response, ...{ ok: false } };
     });
+
 };

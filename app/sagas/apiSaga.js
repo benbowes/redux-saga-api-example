@@ -1,6 +1,6 @@
 import { takeEvery } from 'redux-saga';
 import { put, call } from 'redux-saga/effects';
-import { fetchJsonWrapper } from './helpers/fetchJsonWrapper';
+import { fetchJsonWrapper } from './asyncWrappers/fetchJson';
 import getSearchTermQuery from '../helpers/getSearchTermQuery';
 import * as actionTypes from '../constants/actionTypes';
 
