@@ -11,7 +11,9 @@ export class GifModal extends Component {
   }
 
   /**
-  Focus when props.fullImage is full or props.modalIsLoading is true */
+  Visibility of GifModal is handled by the CSS :FOCUS pseudo selector.
+  When the GifModal has focus it'll show.
+  Focus in on GifModal when props.fullImage is full or props.modalIsLoading is true */
   componentDidUpdate() {
     const { fullImage, isLoading } = this.props;
     if (fullImage !== '' || isLoading) this.gifModalDOM.focus();
