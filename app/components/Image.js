@@ -51,6 +51,7 @@ export default class Image extends Component {
         <label className={styles.githubEmbedLabel}>
           <input
             onFocus={this.setSelection}
+            onClick={this.setSelection}
             className={styles.githubEmbedInput}
             type="text"
             defaultValue={`<img src="${image.images.original.url}" width="100%" />`}
