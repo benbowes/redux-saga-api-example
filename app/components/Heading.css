@@ -18,4 +18,5 @@
   composes: heading;
   font-family: Georgia, serif;
   font-style: italic;
+  font-size: 1.8rem;
 }
