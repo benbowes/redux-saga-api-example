@@ -1,13 +1,17 @@
+@value variables: "./variables.css";
+@value color-red from variables;
+@value border-radius-default from variables;
+
 .sharedButton{
   cursor: pointer;
   font-size: 14px;
-  border-radius: 3px 30px 30px 3px;
+  border-radius: border-radius-default 30px 30px border-radius-default;
   border: 0;
   color: white;
   padding: 10px 25px 10px 20px;
   margin: 0 0 0 8px;
   line-height: 1;
-  background: #e91e63;
+  background: color-red;
   font-weight: bold;
 }
 .sharedButton:HOVER{

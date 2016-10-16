@@ -48,6 +48,7 @@
 
     "postcss-loader": "0.13.x",
     "autoprefixer": "6.4.x",
+    "postcss-modules-values": "1.2.x",
     "css-loader": "0.23.x",
     "style-loader": "0.13.x",
 

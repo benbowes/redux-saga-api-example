@@ -1,0 +1,13 @@
+
+/* COLORS
+*/
+@value color-red:               #e91e63;
+
+/* SETTINGS
+*/
+@value border-radius-default:   3px;
+
+/* ANIMATIONS
+*/
+@value animation-ease:          ease-in-out;
+@value animation-speed-fast:    0.3s;

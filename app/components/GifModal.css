@@ -1,3 +1,7 @@
+@value variables: "../shared-css/variables.css";
+@value animation-ease from variables;
+@value animation-speed-fast from variables;
+
 @keyframes imgLoaded {
   0%   { opacity: 0; }
   100% { opacity: 1; }
@@ -6,7 +10,7 @@
 .img{
   width: 100%;
   display: flex;
-  animation: imgLoaded 0.5s ease-in-out;
+  animation: imgLoaded animation-speed-fast animation-ease;
 }
 
 .imgLoading{

@@ -1,13 +1,17 @@
+@value variables: "../shared-css/variables.css";
+@value animation-ease from variables;
+@value animation-speed-fast from variables;
+
 .image {
   overflow: hidden;
   display: block;
-  transition: all 0.3s ease-in-out;
+  transition: all animation-speed-fast animation-ease;
   background: rgba(0, 0, 0, 0.8);
 }
 
 .image:HOVER,
 .image:FOCUS{
-  transition: all 0s ease-in-out;
+  transition: all 0s animation-ease;
   background: rgba(0, 0, 0, 0.5);
 }
 
