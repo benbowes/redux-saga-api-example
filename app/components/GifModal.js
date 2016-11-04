@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import { GIF_MODAL_CANCEL_REQUEST_IMAGE } from '../constants/actionTypes';
 import styles from './GifModal.css';
 
-export class GifModal extends Component {
+class GifModal extends Component {
   constructor() {
     super();
     this.gifModalDOM = undefined;

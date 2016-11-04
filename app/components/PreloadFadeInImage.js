@@ -1,6 +1,6 @@
 import React, { Component, PropTypes } from 'react';
 
-export default class PreloadFadeInImage extends Component {
+class PreloadFadeInImage extends Component {
 
   constructor() {
     super();
@@ -45,3 +45,5 @@ PreloadFadeInImage.propTypes = {
   className: PropTypes.string,
   imgSauce: PropTypes.string.isRequired
 };
+
+export default PreloadFadeInImage;

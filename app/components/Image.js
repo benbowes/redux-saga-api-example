@@ -3,7 +3,7 @@ import PreloadFadeInImage from './PreloadFadeInImage';
 import { GIF_MODAL_REQUEST_IMAGE } from '../constants/actionTypes';
 import styles from './Image.css';
 
-export default class Image extends Component {
+class Image extends Component {
 
   constructor (){
     super();
@@ -74,3 +74,5 @@ Image.propTypes = {
     })
   })
 };
+
+export default Image;

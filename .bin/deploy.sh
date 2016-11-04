@@ -16,7 +16,7 @@ npm test
 npm run dist
 
 # Copy other files into dist/
-cp -r css index.html dist
+cp -r css index.html favicon.ico dist
 
 # git add new dist/ assets
 git add -A
