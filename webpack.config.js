@@ -3,7 +3,6 @@ const values = require('postcss-modules-values');
 const webpack = require('webpack');
 const htmlWebpackPlugin = require('html-webpack-plugin');
 const extractTextPlugin = require('extract-text-webpack-plugin');
-const serverPath = (process.env.NODE_ENV === 'production') ? 'https://benbowes.github.io/redux-saga-api-example/' : 'http://0.0.0.0:3005/';
 
 module.exports = {
 
@@ -12,8 +11,8 @@ module.exports = {
   entry: './app/index.js',
 
   output: {
-    path: '/dist/',
-    filename: `${serverPath}app.[chunkhash].js`
+    path: './dist/',
+    filename: `/app.js`
   },
 
   module: {
@@ -55,9 +54,8 @@ module.exports = {
         )
       }
     }),
-    new extractTextPlugin(`${serverPath}css/[name].[chunkhash].css`),
+    new extractTextPlugin(`/css/[name].css`),
     new htmlWebpackPlugin({
-      title: 'Custom template',
       inject: true,
       template: 'index.html'
     })

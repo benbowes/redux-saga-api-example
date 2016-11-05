@@ -4,8 +4,19 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>GDD - Giphy Github embed Gif code explorer</title>
+  <link href="/css/styleguide.css" rel="stylesheet">
 </head>
 <body>
   <div id="root" class="root"></div>
+  <script>
+    var baseHref = (location.host.indexOf(':3005') === -1)
+          ? 'https://benbowes.github.io/redux-saga-api-example/'
+          : 'http://0.0.0.0:3005/';
+
+    var baseEl = document.createElement('base');
+    baseEl.setAttribute('href', baseHref);
+    var firstHeadTag = document.getElementsByTagName("head")[0];
+    firstHeadTag.insertBefore(baseEl, firstHeadTag.firstChild);
+  </script>
 </body>
 </html>

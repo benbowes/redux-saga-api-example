@@ -15,6 +15,9 @@ npm test
 # Build JS into dist/app.js
 npm run dist
 
+# Delete dist folder
+# rm -rf dist/*
+
 # Copy other files into dist/
 cp -r css index.html favicon.ico dist
 
