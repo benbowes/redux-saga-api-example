@@ -8,7 +8,7 @@ import { Router, Route, browserHistory, IndexRedirect } from 'react-router';
 
 // Temporary way to set initialState... might check out react-router-redux
 const routeSearchStr = decodeURIComponent(
-  browserHistory.getCurrentLocation().pathname.split('/search')[1].replace(/\//g, '')
+  (browserHistory.getCurrentLocation().pathname.split('/search')[1] || '').replace(/\//g, '')
 );
 
 const store = configureStore(routeSearchStr);
