@@ -14,7 +14,7 @@ class LoadMoreButton extends Component {
   // Infinite scroll
   isInView() {
     const { dispatch, searchTerm, searchOffset, isLoading } = this.props;
-    if (this.DOM.getBoundingClientRect().top > 400 && !isLoading) {
+    if (this.DOM.getBoundingClientRect().top < 500 && !isLoading) {
       dispatch({ type: REQUEST_SHOW_MORE, payload: { searchOffset, searchTerm } });
     }
   }

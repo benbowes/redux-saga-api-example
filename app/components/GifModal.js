@@ -15,8 +15,9 @@ class GifModal extends Component {
   When the GifModal has focus it'll show.
   Focus in on GifModal when props.fullImage is full or props.modalIsLoading is true */
   componentDidUpdate() {
-    const { fullImage, isLoading } = this.props;
+    const { fullImage, isLoading, isLoadingMoreGifs } = this.props;
     if (fullImage !== '' || isLoading) this.gifModalDOM.focus();
+    if (isLoadingMoreGifs) this.gifModalDOM.blur(); // when requesting more results, hide gif modal
   }
 
   componentDidMount() {
@@ -75,6 +76,7 @@ GifModal.propTypes = {
   }).isRequired,
   fullImage: PropTypes.string.isRequired,
   isLoading: PropTypes.bool.isRequired,
+  isLoadingMoreGifs: PropTypes.bool.isRequired,
   giphyURL: PropTypes.string.isRequired
 };
 
@@ -84,6 +86,7 @@ export default connect((state) => {
     fullImage: state.modal.fullImage,
     giphyURL: state.modal.giphyURL,
     isLoading: state.modal.isLoading,
+    isLoadingMoreGifs: state.imageSearch.isLoading,
     thumbImage: state.modal.thumbImage
   };
 })(GifModal);

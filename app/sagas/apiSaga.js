@@ -2,7 +2,12 @@ import { takeEvery } from 'redux-saga';
 import { put, call } from 'redux-saga/effects';
 import { fetchJsonWrapper } from './asyncWrappers/fetchJson';
 import getSearchTermQuery from '../helpers/getSearchTermQuery';
-import * as actionTypes from '../constants/actionTypes';
+import {
+  RECEIVE_SEARCH_DATA,
+  REQUEST_SEARCH_DATA,
+  REQUEST_SHOW_MORE,
+  RECEIVE_SEARCH_DATA_FAILED
+} from '../constants/actionTypes';
 
 /*
 * @description Passes the redux action's `url` through to fetchJsonWrapper().
@@ -18,7 +23,7 @@ export function* fetchData( action ) {
     const receivedData = yield call( fetchJsonWrapper, searchURL );
     if ( receivedData.ok ) {
       yield put({
-        type: actionTypes.RECEIVE_SEARCH_DATA,
+        type: RECEIVE_SEARCH_DATA,
         payload: { receivedData }
       });
     } else {
@@ -26,7 +31,7 @@ export function* fetchData( action ) {
     }
   } catch(err) {
     yield put({
-      type: actionTypes.RECEIVE_SEARCH_DATA_FAILED,
+      type: RECEIVE_SEARCH_DATA_FAILED,
       payload: { error: err, failedAction: action }
     });
   }
@@ -36,9 +41,9 @@ export function* fetchData( action ) {
 * @description Listens for when an actionTypes.REQUEST_SEARCH_DATA action is fired
 * It calls fetchData() everytime it does- passing in the redux action payload with it*/
 export function* listenForDataRequests() {
-  yield* takeEvery( actionTypes.REQUEST_SEARCH_DATA, fetchData );
+  yield* takeEvery( REQUEST_SEARCH_DATA, fetchData );
 }
 
 export function* listenForShowMoreRequests() {
-  yield* takeEvery( actionTypes.REQUEST_SHOW_MORE, fetchData );
+  yield* takeEvery( REQUEST_SHOW_MORE, fetchData );
 }

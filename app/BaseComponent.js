@@ -10,8 +10,8 @@ import * as styles from './BaseComponent.css';
 export class BaseComponent extends Component {
 
   render() {
-    const { dispatch, imageSearchResults, isLoading, searchTerm, showMorePossible, searchOffset,
-            totalResultsCount
+    const { dispatch, imageSearchResults, isLoading, searchTerm, showMorePossible,
+            searchOffset, totalResultsCount
           } = this.props;
 
     return (
