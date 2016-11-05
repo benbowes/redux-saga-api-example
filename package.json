@@ -60,6 +60,8 @@
     "mocha-jsdom": "1.1.x",
 
     "webpack": "1.12.x",
-    "webpack-dev-server": "1.14.x"
+    "webpack-dev-server": "1.14.x",
+    "extract-text-webpack-plugin": "1.0.x",
+    "html-webpack-plugin": "2.22.x"
   }
 }
