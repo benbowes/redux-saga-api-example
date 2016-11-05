@@ -38,8 +38,9 @@
 
     "pre-commit": "1.1.x",
 
-    "react": "0.14.x",
-    "react-dom": "0.14.x",
+    "react": "15.3.x",
+    "react-dom": "15.3.x",
+    "react-router": "3.0.x",
 
     "react-redux": "4.4.x",
     "redux": "3.5.x",
@@ -54,12 +55,11 @@
 
     "expect": "1.20.x",
     "mocha": "2.5.x",
-    "react-addons-test-utils": "0.14.x",
+    "react-addons-test-utils": "15.3.x",
     "ignore-styles": "2.0.x",
     "mocha-jsdom": "1.1.x",
 
     "webpack": "1.12.x",
     "webpack-dev-server": "1.14.x"
-
   }
 }

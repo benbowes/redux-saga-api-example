@@ -9,11 +9,11 @@ import { initialState } from 'store/initialState';
  * @description `rootSaga*` will is called after middleware is applied.
  * `Redux devToolsExtension` Chrome extension will be available if yer `Chrome` has it.
  */
-export default function configureStore() {
+export default function configureStore(routeSearchStr) {
   const sagaMiddleware = createSagaMiddleware();
   const store = createStore(
     rootReducer,
-    initialState,
+    initialState(routeSearchStr),
     compose(
       applyMiddleware( sagaMiddleware ),
       window.devToolsExtension ? window.devToolsExtension() : f => f

@@ -2,14 +2,14 @@ import 'ignore-styles';
 import expect from 'expect';
 import React from 'react';
 import ReactTestUtils from 'react-addons-test-utils';
-import { BaseComponent } from './BaseComponent';
+import { Search } from './Search';
 import GifModal from './components/GifModal';
 import LoadMoreButton from './components/LoadMoreButton';
 import Heading from './components/Heading';
 import SearchInput from './components/SearchInput';
 import SearchResults from './components/SearchResults';
 
-describe('<BaseComponent />', () => {
+describe('<Search />', () => {
 
   const mockProps = {
     dispatch: () => {},
@@ -30,7 +30,7 @@ describe('<BaseComponent />', () => {
 
   it('Should render as expected', () => {
     const renderer = ReactTestUtils.createRenderer();
-    renderer.render( <BaseComponent {...mockProps} /> );
+    renderer.render( <Search {...mockProps} /> );
     const ReactComponent = renderer.getRenderOutput();
 
     const children = ReactComponent.props.children;
@@ -53,7 +53,7 @@ describe('<BaseComponent />', () => {
     };
 
     const renderer = ReactTestUtils.createRenderer();
-    renderer.render( <BaseComponent {...emptyMessageProps} /> );
+    renderer.render( <Search {...emptyMessageProps} /> );
     const ReactComponent = renderer.getRenderOutput();
     const children = ReactComponent.props.children;
     expect( children[4].type ).toBe( 'p' );
@@ -67,7 +67,7 @@ describe('<BaseComponent />', () => {
     };
 
     const renderer = ReactTestUtils.createRenderer();
-    renderer.render( <BaseComponent {...emptyMessageProps} /> );
+    renderer.render( <Search {...emptyMessageProps} /> );
     const ReactComponent = renderer.getRenderOutput();
     const children = ReactComponent.props.children;
     expect( children[4].type ).toBe( 'p' );
@@ -82,7 +82,7 @@ describe('<BaseComponent />', () => {
     };
 
     const renderer = ReactTestUtils.createRenderer();
-    renderer.render( <BaseComponent {...emptyMessageProps} /> );
+    renderer.render( <Search {...emptyMessageProps} /> );
     const ReactComponent = renderer.getRenderOutput();
     const children = ReactComponent.props.children;
     expect( children[3].type ).toBe( SearchResults );

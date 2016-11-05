@@ -1,6 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
 import { REQUEST_SEARCH_DATA } from '../constants/actionTypes';
+import { browserHistory } from 'react-router';
 import * as styles from './SearchInput.css';
 
 class SearchInput extends Component {
@@ -13,6 +14,9 @@ class SearchInput extends Component {
         type: REQUEST_SEARCH_DATA,
         payload: { searchOffset: 0, searchTerm: this.refs.searchGiphyInput.value }
       });
+
+      browserHistory.push(`/search/${this.refs.searchGiphyInput.value}`);
+
       this.refs.searchGiphyInput.value = ''; // clear input field once redux store has been updated
     }
   }

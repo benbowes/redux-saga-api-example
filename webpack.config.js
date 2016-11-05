@@ -4,11 +4,13 @@ const webpack = require('webpack');
 
 module.exports = {
 
+  devtool: 'source-map',
+
   entry: './app/index.js',
 
   output: {
     path: './dist/',
-    filename: './app.js'
+    filename: 'app.js'
   },
 
   module: {
@@ -34,6 +36,12 @@ module.exports = {
       'app',
       'node_modules'
     ]
+  },
+
+  devServer: {
+    historyApiFallback: {
+      index: './dist/'
+    }
   },
 
   plugins: [
