@@ -12,8 +12,7 @@ module.exports = {
 
   output: {
     path: './dist/',
-    filename: 'app.js',
-    publicPath: '/'
+    filename: 'app.js'
   },
 
   module: {
