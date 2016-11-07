@@ -8,7 +8,8 @@
     "lint": "eslint ./app",
     "test": "mocha --compilers js:babel-core/register 'app/**/*__test__.js'",
     "dist": "NODE_ENV=production webpack -p",
-    "deploy": ".bin/deploy.sh"
+    "deploy": ".bin/deploy.sh",
+    "deploy:heroku": ".bin/deploy-heroku.sh"
   },
 
   "engines": { "node": ">=4.2.0" },
@@ -18,7 +19,7 @@
   "license": "UNLICENSED",
   "private": true,
 
-  "devDependencies": {
+  "dependencies": {
 
     "babel-core": "6.9.x",
     "babel-loader": "6.2.x",

@@ -12,7 +12,7 @@ module.exports = {
 
   output: {
     path: './dist/',
-    filename: 'app.js'
+    filename: '/app.js'
   },
 
   module: {
@@ -54,7 +54,7 @@ module.exports = {
         )
       }
     }),
-    new extractTextPlugin('css/[name].css'),
+    new extractTextPlugin('/css/[name].css'),
     new htmlWebpackPlugin({
       inject: true,
       template: 'index.html'
