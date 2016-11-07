@@ -22,7 +22,7 @@ npm run dist
 cp -r css index.html favicon.ico dist
 
 # git add new dist/ assets
-git add -A
+git add .
 
 # Commit dist/ changes
 git commit -m "Deploy to gh-pages..."
