@@ -4,7 +4,8 @@
   "description": "Test Search",
   "main": "app/index.js",
   "scripts": {
-    "start": "NODE_ENV=development webpack-dev-server --progress --host 0.0.0.0 --port 3005",
+    "start": "node ./dist/server/index.js",
+    "start:dev": "NODE_ENV=development webpack-dev-server --progress --host 0.0.0.0 --port 3005",
     "lint": "eslint ./app",
     "test": "mocha --compilers js:babel-core/register 'app/**/*__test__.js'",
     "dist": "NODE_ENV=production webpack -p",
@@ -63,6 +64,8 @@
     "webpack": "1.12.x",
     "webpack-dev-server": "1.14.x",
     "extract-text-webpack-plugin": "1.0.x",
-    "html-webpack-plugin": "2.22.x"
+    "html-webpack-plugin": "2.22.x",
+
+    "express": "4.14.x"
   }
 }
