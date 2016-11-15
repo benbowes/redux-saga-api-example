@@ -13,9 +13,12 @@ class LoadMoreButton extends Component {
 
   // Infinite scroll
   isInView() {
-    const { dispatch, searchTerm, searchOffset, isLoading } = this.props;
-    if (this.DOM.getBoundingClientRect().top < 500 && !isLoading) {
-      dispatch({ type: REQUEST_SHOW_MORE, payload: { searchOffset, searchTerm } });
+    const { isLoading } = this.props;
+    const buttonIsCurrentlyRendered = this.DOM.getBoundingClientRect().top > 0;
+    const buttonIsInView = this.DOM.getBoundingClientRect().top < 500;
+
+    if (buttonIsCurrentlyRendered && buttonIsInView && !isLoading) {
+      this.buttonRef.click();
     }
   }
 
@@ -31,6 +34,7 @@ class LoadMoreButton extends Component {
       <div className={styles.buttonContainer}>
         <button
           className={isLoading ? styles.buttonDisabled : styles.button}
+          ref={(button) => this.buttonRef = button}
           onClick={() => dispatch({
             type: REQUEST_SHOW_MORE,
             payload: { searchOffset, searchTerm }

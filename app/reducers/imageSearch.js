@@ -35,6 +35,7 @@ export const imageSearch = ( state = initialState, action = {} ) => {
     return {
       ...initialState,
       isLoading: true,
+      searchOffset: action.payload.searchOffset,
       searchTerm: action.payload.searchTerm
     };
 
@@ -42,6 +43,7 @@ export const imageSearch = ( state = initialState, action = {} ) => {
     return {
       ...state,
       isLoading: true,
+      searchOffset: action.payload.searchOffset,
       searchTerm: action.payload.searchTerm
     };
 

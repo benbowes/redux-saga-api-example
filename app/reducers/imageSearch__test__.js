@@ -46,26 +46,30 @@ describe(`Reducers "imageSearch"`, () => {
     const result = imageSearch(undefined, {
       type: actionTypes.REQUEST_SEARCH_DATA,
       payload: {
+        searchOffset: 0,
         searchTerm: 'Some search term'
       }
     });
     expect(result).toEqual({
       ...initialState,
       isLoading: true,
+      searchOffset: 0,
       searchTerm: 'Some search term'
     });
   });
 
   it(`It should set isLoading:true when REQUEST_SHOW_MORE`, () => {
     const result = imageSearch(initialState, {
-      type: actionTypes.REQUEST_SEARCH_DATA,
+      type: actionTypes.REQUEST_SHOW_MORE,
       payload: {
+        searchOffset: 50,
         searchTerm: 'Some search term'
       }
     });
     expect(result).toEqual({
       ...initialState,
       isLoading: true,
+      searchOffset: 50,
       searchTerm: 'Some search term'
     });
   });
