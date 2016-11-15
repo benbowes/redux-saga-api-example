@@ -21,8 +21,8 @@ cp -r css index.html favicon.ico dist
 # git add new dist/ assets
 git add .
 
-# Commit dist/ changes
-git commit -m "Deploy to gh-pages..."
+# Commit dist/ changes bypass `pre-commit` hook with --no-verify
+git commit -m "Deploy to gh-pages..." --no-verify
 
 # Push commited changes to master
 git push upstream master
