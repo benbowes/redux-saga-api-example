@@ -9,7 +9,6 @@ export const initialState = {
   images: [],
   isLoading: false,
   showMorePossible: true,
-  messages: undefined,
   searchTerm: undefined,
   searchOffset: 0,
   totalResultsCount: undefined
@@ -51,7 +50,6 @@ export const imageSearch = ( state = initialState, action = {} ) => {
     return {
       ...state,
       isLoading: false,
-      messages: undefined,
       showMorePossible: getShowMorePossible( state.searchOffset, action.payload.receivedData ),
       images: [...state.images, ...action.payload.receivedData.data],
       searchOffset: getSearchOffset( state.searchOffset, action.payload.receivedData ),
@@ -59,11 +57,16 @@ export const imageSearch = ( state = initialState, action = {} ) => {
     };
 
   case RECEIVE_SEARCH_DATA_FAILED:
+
+    console.warn(
+      'Oh dear, all the things just died :(',
+      'ERROR =>', action.payload.error,
+      'FAILED ACTION =>', action.payload.failedAction
+    );
+
     return {
       ...state,
-      isLoading: false,
-      messages: 'Oh dear, all the things just died :(',
-      searchTerm: action.payload.searchTerm
+      isLoading: false
     };
 
   default:

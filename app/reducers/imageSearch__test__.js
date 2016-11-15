@@ -113,18 +113,21 @@ describe(`Reducers "imageSearch"`, () => {
     });
   });
 
-  it(`It should set messages when RECEIVE_SEARCH_DATA_FAILED`, () => {
+  it(`It should set isLoading:false when RECEIVE_SEARCH_DATA_FAILED`, () => {
     const result = imageSearch(initialState, {
       type: actionTypes.RECEIVE_SEARCH_DATA_FAILED,
       payload: {
-        searchTerm: 'Some Search Query'
+        error: {Some: 'error'},
+        failedAction: {
+          type: actionTypes.REQUEST_SEARCH_DATA,
+          payload: { searchOffset: 0, searchTerm: 'Some search term' }
+        }
       }
     });
+
     expect(result).toEqual({
       ...initialState,
-      isLoading: false,
-      messages: 'Oh dear, all the things just died :(',
-      searchTerm: 'Some Search Query'
+      isLoading: false
     });
   });
 
