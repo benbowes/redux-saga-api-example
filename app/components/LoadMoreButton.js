@@ -15,7 +15,7 @@ class LoadMoreButton extends Component {
   isInView() {
     const { isLoading } = this.props;
     const buttonIsCurrentlyRendered = this.DOM.getBoundingClientRect().top > 0;
-    const buttonIsInView = this.DOM.getBoundingClientRect().top < 500;
+    const buttonIsInView = this.DOM.getBoundingClientRect().bottom < window.innerHeight;
 
     if (buttonIsCurrentlyRendered && buttonIsInView && !isLoading) {
       this.buttonRef.click();
