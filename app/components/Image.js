@@ -58,6 +58,16 @@ class Image extends Component {
             defaultValue={`<img src="${image.images.original.url}" width="100%" />`}
           />
         </label>
+        <label className={styles.githubEmbedLabel}>
+          <input
+            onFocus={this.setSelection}
+            onClick={this.setSelection}
+            title="Markdown image embed code"
+            className={styles.githubEmbedInput}
+            type="text"
+            defaultValue={`![](${image.images.original.url})`}
+          />
+        </label>
       </div>
     );
   }
