@@ -24,7 +24,7 @@ describe('<Image />', () => {
     const ReactComponent = renderer.getRenderOutput();
 
     expect( ReactComponent.type ).toEqual('div');
-    expect( ReactComponent.props.children.length ).toEqual(2);
+    expect( ReactComponent.props.children.length ).toEqual(3);
 
     const imageContainer = ReactComponent.props.children[0];
     expect( imageContainer.type ).toEqual('a');
