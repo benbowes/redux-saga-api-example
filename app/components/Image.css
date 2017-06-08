@@ -24,8 +24,13 @@
   cursor: pointer;
 }
 
+.githubEmbedLabels{
+  display: flex;
+  justify-content: space-between;
+}
+
 .githubEmbedLabel{
-  width: 100%;
+  width: 49%;
   margin: 8px 0 0;
   display: inline-block;
   color: #fff;
@@ -39,6 +44,11 @@
   border: 0;
   color: #666;
   background: #fff;
-  border-radius: 3px;
-  box-shadow: inset 1px 2px 2px 0px rgba(0,0,0,0.2);
+  border-radius: 2px 0 0 2px;
+  box-shadow: 0px 0px 2px 1px rgba(0,0,0,.1);
+}
+
+.githubEmbedInputRight{
+  composes: githubEmbedInput;
+  border-radius: 0 2px 2px 0;
 }

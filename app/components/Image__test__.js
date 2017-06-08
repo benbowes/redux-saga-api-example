@@ -24,7 +24,7 @@ describe('<Image />', () => {
     const ReactComponent = renderer.getRenderOutput();
 
     expect( ReactComponent.type ).toEqual('div');
-    expect( ReactComponent.props.children.length ).toEqual(3);
+    expect( ReactComponent.props.children.length ).toEqual(2);
 
     const imageContainer = ReactComponent.props.children[0];
     expect( imageContainer.type ).toEqual('a');
@@ -33,7 +33,7 @@ describe('<Image />', () => {
     expect( preloadFadeInImage.type).toEqual(PreloadFadeInImage);
     expect( preloadFadeInImage.props.imgSauce ).toEqual('http://some-image.url');
 
-    const githubEmbedInput = ReactComponent.props.children[1].props.children;
+    const githubEmbedInput = ReactComponent.props.children[1].props.children[0].props.children;
     expect( githubEmbedInput.type).toEqual('input');
     expect( githubEmbedInput.props.defaultValue).toEqual('<img src="http://some-image.url/giphy.gif" width="100%" />');
   });
