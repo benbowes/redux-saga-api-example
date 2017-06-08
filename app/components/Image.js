@@ -48,26 +48,28 @@ class Image extends Component {
             imgSauce={image.images.fixed_width.url}
           />
         </a>
-        <label className={styles.githubEmbedLabel}>
-          <input
-            onFocus={this.setSelection}
-            onClick={this.setSelection}
-            title="Github image embed code"
-            className={styles.githubEmbedInput}
-            type="text"
-            defaultValue={`<img src="${image.images.original.url}" width="100%" />`}
-          />
-        </label>
-        <label className={styles.githubEmbedLabel}>
-          <input
-            onFocus={this.setSelection}
-            onClick={this.setSelection}
-            title="Markdown image embed code"
-            className={styles.githubEmbedInput}
-            type="text"
-            defaultValue={`![](${image.images.original.url})`}
-          />
-        </label>
+        <div className={styles.githubEmbedLabels}>
+          <label className={styles.githubEmbedLabel}>
+            <input
+              onFocus={this.setSelection}
+              onClick={this.setSelection}
+              title="Github image embed code"
+              className={styles.githubEmbedInput}
+              type="text"
+              defaultValue={`<img src="${image.images.original.url}" width="100%" />`}
+            />
+          </label>
+          <label className={styles.githubEmbedLabel}>
+            <input
+              onFocus={this.setSelection}
+              onClick={this.setSelection}
+              title="Markdown image embed code"
+              className={styles.githubEmbedInputRight}
+              type="text"
+              defaultValue={`![](${image.images.original.url})`}
+            />
+          </label>
+        </div>
       </div>
     );
   }
