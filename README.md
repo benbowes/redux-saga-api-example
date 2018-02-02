@@ -58,6 +58,5 @@ npm run
 ```
 
 ### Todo
-- --Copy/paste embed code--
-- Add React Router
-- Add Infinite scroll
+- Add a router
+- Add some kind of personal history
