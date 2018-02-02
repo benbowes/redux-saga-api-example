@@ -58,5 +58,5 @@ npm run
 ```
 
 ### Todo
-- Add a router
+- Add a router or a query param
 - Add some kind of personal history
