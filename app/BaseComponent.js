@@ -9,9 +9,14 @@ import * as styles from './BaseComponent.css';
 
 export class BaseComponent extends Component {
 
+  state = {
+    recentSearchesOpen: false
+  }
+
   render() {
+    const { recentSearchesOpen } = this.state;
     const { dispatch, imageSearchResults, isLoading, searchTerm, showMorePossible,
-            searchOffset, totalResultsCount
+            searchOffset, totalResultsCount, recentSearches
           } = this.props;
 
     return (
@@ -31,12 +36,26 @@ export class BaseComponent extends Component {
           isLoading={isLoading}
         />
         }
-        <a className={styles.githubLink}
-          href="https://github.com/benbowes/redux-saga-api-example/"
-          target="_blank"
-          title="View on Github">
-            View on Github
-        </a>
+        <div className={styles.recentSearches}>
+          <a
+            className={styles.recentSearchesButton}
+            href="javascript:;"
+            onClick={() => this.setState({ recentSearchesOpen: !recentSearchesOpen })}
+          >Recent searches</a>
+
+          <div className={styles.recentSearchesList} style={{display: recentSearchesOpen ? 'block' : 'none'}}>
+            <div className={styles.recentSearchesTriangle} />
+            {(recentSearches || []).map((searchTerm, index) => (
+              <a className={styles.recentSearchesLink} key={`rs_${index}`} href={`?s=${searchTerm}`}>{searchTerm}</a>
+            ))}
+          </div>
+        </div>
+          <a className={styles.githubLink}
+            href="https://github.com/benbowes/redux-saga-api-example/"
+            target="_blank"
+            title="View on Github">
+              View on Github
+          </a>
       </div>
     );
   }
@@ -56,7 +75,8 @@ BaseComponent.propTypes = {
     url: PropTypes.string.isRequired,
     width: PropTypes.string.isRequired,
     height: PropTypes.string.isRequired
-  })
+  }),
+  recentSearches: PropTypes.arrayOf(PropTypes.string)
 };
 
 export default connect((state) => {
@@ -70,6 +90,7 @@ export default connect((state) => {
     showMorePossible: state.imageSearch.showMorePossible,
     searchOffset: state.imageSearch.searchOffset,
     searchTerm: state.imageSearch.searchTerm,
-    totalResultsCount: state.imageSearch.totalResultsCount
+    totalResultsCount: state.imageSearch.totalResultsCount,
+    recentSearches: state.recentSearches.recentSearches
   };
 })(BaseComponent);

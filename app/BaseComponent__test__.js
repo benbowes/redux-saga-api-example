@@ -34,7 +34,7 @@ describe('<BaseComponent />', () => {
     const ReactComponent = renderer.getRenderOutput();
 
     const children = ReactComponent.props.children;
-    expect( children.length ).toBe( 7 );
+    expect( children.length ).toBe( 8 );
 
     expect( children[0].type ).toBe( GifModal );
     expect( children[1].type ).toBe( Heading );
@@ -42,8 +42,8 @@ describe('<BaseComponent />', () => {
     expect( children[3].type ).toBe( SearchResults );
     expect( children[4] ).toBe( false );
     expect( children[5].type ).toBe( LoadMoreButton );
-    expect( children[6].type ).toBe( 'a' );
-    expect( children[6].props.href ).toEqual('https://github.com/benbowes/redux-saga-api-example/');
+    expect( children[7].type ).toBe( 'a' );
+    expect( children[7].props.href ).toEqual('https://github.com/benbowes/redux-saga-api-example/');
   });
 
   it('It should show an empty results message when no results', () => {

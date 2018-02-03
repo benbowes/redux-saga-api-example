@@ -10,6 +10,58 @@
   transition: all 0.3s;
 }
 
+.recentSearches {
+  color: rgba(255,255,255,0.5);
+  position: absolute;
+  top: 25px;
+  left: 30px;
+  font-size: 12px;
+  text-decoration: none;
+  transition: all 0.3s;
+}
+
+.recentSearchesList {
+  background: #424242;
+  border-radius: 0 4px 4px 4px;
+  margin-top: 8px;
+  position: relative;
+  max-height: 278px;
+  overflow: auto;
+}
+
+.recentSearchesTriangle {
+  position: absolute;
+  width: 0;
+  height: 0;
+  top: -5px;
+  border-style: solid;
+  border-width: 0 5px 5px 5px;
+  border-color: transparent transparent #424242 transparent;
+}
+
+.recentSearchesButton {
+  color: rgba(255,255,255,0.5);
+  text-decoration: none;
+  transition: all 0.3s;
+  display: block;
+}
+
+.recentSearchesLink {
+  display: block;
+  color: #fff;
+  text-decoration: none;
+  padding: 0.5rem;
+}
+
+.recentSearchesLink:not(:last-child) {
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.recentSearchesLink:HOVER {
+  color: #424242;
+  background: rgba(255,255,255,0.8);
+}
+
 .githubLink:HOVER{
   transition: all 0s;
   color: rgba(255,255,255,1);

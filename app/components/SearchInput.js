@@ -1,7 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
 import getParameterByName from '../helpers/getParameterByName';
-import { REQUEST_SEARCH_DATA } from '../constants/actionTypes';
+import { REQUEST_SEARCH_DATA, ADD_RECENT_SEARCH_LOCAL_STORAGE } from '../constants/actionTypes';
 import { DEFAULT_SEARCH_TERM } from '../constants/';
 import * as styles from './SearchInput.css';
 
@@ -35,6 +35,12 @@ class SearchInput extends Component {
           searchTerm: this.refs.searchGiphyInput.value
         }
       });
+
+      dispatch({
+        type: ADD_RECENT_SEARCH_LOCAL_STORAGE,
+        value: this.refs.searchGiphyInput.value
+      });
+
       this.refs.searchGiphyInput.value = ''; // clear input field once redux store has been updated
     }
   }
