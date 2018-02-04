@@ -6,6 +6,7 @@ import Heading from './components/Heading';
 import SearchInput from './components/SearchInput';
 import SearchResults from './components/SearchResults';
 import * as styles from './BaseComponent.css';
+import { CLEAR_RECENT_SEARCH_LOCAL_STORAGE } from './constants/actionTypes';
 
 export class BaseComponent extends Component {
 
@@ -46,8 +47,35 @@ export class BaseComponent extends Component {
           <div className={styles.recentSearchesList} style={{display: recentSearchesOpen ? 'block' : 'none'}}>
             <div className={styles.recentSearchesTriangle} />
             {(recentSearches || []).map((searchTerm, index) => (
-              <a className={styles.recentSearchesLink} key={`rs_${index}`} href={`?s=${searchTerm}`}>{searchTerm}</a>
+              <a
+                className={styles.recentSearchesLink}
+                key={`rs_${index}`}
+                href={`?s=${searchTerm}`}
+              >
+                {searchTerm}
+              </a>
             ))}
+
+            {recentSearches.length > 0 &&
+            <a
+              className={styles.recentSearchesLink}
+              href="javascript:;"
+              onClick={() => {
+                dispatch({ type: CLEAR_RECENT_SEARCH_LOCAL_STORAGE });
+              }}
+            >
+              CLEAR SEARCHES
+            </a>
+            }
+
+            {recentSearches.length === 0 &&
+            <div
+              className={styles.recentSearchesLink}
+            >
+              Perform a search to populate this list
+            </div>
+            }
+
           </div>
         </div>
           <a className={styles.githubLink}
